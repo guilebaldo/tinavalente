@@ -16,13 +16,40 @@
     const svg = document.createElementNS(svgNS, "svg");
     svg.setAttribute("viewBox", viewBox);
     svg.setAttribute("role", "img");
-    svg.setAttribute("aria-label", "Mapa de México por estados");
+    svg.setAttribute("aria-label", "Mapa de México. Los estados con productores se pueden seleccionar.");
     svg.id = "mexico-map-svg";
 
+    const frame = container.querySelector(".map-wrapper") || container;
     const tooltip = document.createElement("div");
     tooltip.className = "map-tooltip";
-    tooltip.setAttribute("role", "tooltip");
-    container.querySelector(".map-wrapper")?.appendChild(tooltip);
+    tooltip.setAttribute("role", "status");
+    tooltip.innerHTML = "<strong></strong><span></span>";
+    frame.appendChild(tooltip);
+
+    const coarse = window.matchMedia("(pointer: coarse)").matches;
+    let activePath = null;
+
+    function setActive(path) {
+      if (activePath) activePath.classList.remove("is-active");
+      activePath = path || null;
+      if (activePath) activePath.classList.add("is-active");
+      container.querySelectorAll(".state-chip").forEach((chip) => {
+        chip.classList.toggle("is-active", chip.dataset.stateId === path?.dataset.stateId);
+      });
+    }
+
+    function placeTooltip(event, name, count) {
+      const wrap = frame.getBoundingClientRect();
+      const pad = 96;
+      const x = Math.min(Math.max(event.clientX - wrap.left, pad), wrap.width - pad);
+      const y = Math.max(event.clientY - wrap.top, 36);
+      tooltip.querySelector("strong").textContent = name;
+      tooltip.querySelector("span").textContent =
+        count === 1 ? "1 productor" : `${count} productores`;
+      tooltip.style.left = `${x}px`;
+      tooltip.style.top = `${y}px`;
+      tooltip.classList.add("is-visible");
+    }
 
     locations.forEach((loc) => {
       const count = producerCountByStateId(loc.id);
@@ -34,65 +61,83 @@
       if (count > 0) {
         path.classList.add("has-producers");
         path.setAttribute("tabindex", "0");
-        path.setAttribute("role", "button");
+        path.setAttribute("role", "link");
         path.setAttribute(
           "aria-label",
-          `${loc.name}, ${count} productor${count === 1 ? "" : "es"}`
+          `${loc.name}, ${count} productor${count === 1 ? "" : "es"}. Ver productores.`
         );
       } else {
         path.setAttribute("aria-hidden", "true");
       }
 
-      const showTooltip = (event) => {
-        if (count === 0) return;
-        const rect = container.querySelector(".map-wrapper").getBoundingClientRect();
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
-        tooltip.textContent = `${loc.name} · ${count} productor${count === 1 ? "" : "es"}`;
-        tooltip.style.left = `${x}px`;
-        tooltip.style.top = `${y}px`;
-        tooltip.classList.add("is-visible");
-      };
-
-      const hideTooltip = () => tooltip.classList.remove("is-visible");
-
+      const hide = () => tooltip.classList.remove("is-visible");
       const activate = () => {
         if (count === 0) return;
+        setActive(path);
         if (typeof onStateClick === "function") onStateClick(loc.id, loc.name);
       };
 
-      path.addEventListener("mouseenter", showTooltip);
-      path.addEventListener("mousemove", showTooltip);
-      path.addEventListener("mouseleave", hideTooltip);
+      if (!coarse) {
+        path.addEventListener("mouseenter", (event) => {
+          if (count === 0) return;
+          setActive(path);
+          placeTooltip(event, loc.name, count);
+        });
+        path.addEventListener("mousemove", (event) => {
+          if (count === 0) return;
+          placeTooltip(event, loc.name, count);
+        });
+        path.addEventListener("mouseleave", () => {
+          hide();
+          setActive(null);
+        });
+      } else {
+        path.addEventListener("pointerdown", () => {
+          if (count === 0) return;
+          setActive(path);
+        });
+      }
+
       path.addEventListener("click", activate);
-      path.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
+      path.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
           activate();
         }
       });
+      path.addEventListener("focus", () => {
+        if (count === 0) return;
+        setActive(path);
+      });
+      path.addEventListener("blur", () => setActive(null));
 
       svg.appendChild(path);
     });
 
-    const mapMount = container.querySelector("[data-map-mount]");
-    if (mapMount) {
-      mapMount.innerHTML = "";
-      mapMount.appendChild(svg);
+    const mount = container.querySelector("[data-map-mount]");
+    if (mount) {
+      mount.replaceChildren(svg);
     }
+
+    container.querySelectorAll(".state-chip").forEach((chip) => {
+      chip.addEventListener("mouseenter", () => {
+        const path = svg.querySelector(`[data-state-id="${chip.dataset.stateId}"]`);
+        setActive(path);
+      });
+      chip.addEventListener("mouseleave", () => setActive(null));
+      chip.addEventListener("focus", () => {
+        const path = svg.querySelector(`[data-state-id="${chip.dataset.stateId}"]`);
+        setActive(path);
+      });
+    });
 
     return {
       highlightState(stateId) {
-        svg.querySelectorAll(".state").forEach((p) => p.classList.remove("is-focused"));
-        const el = svg.querySelector(`[data-state-id="${stateId}"]`);
-        if (el) el.classList.add("is-focused");
+        const path = svg.querySelector(`[data-state-id="${stateId}"]`);
+        setActive(path);
       }
     };
   }
 
-  window.TinaMap = {
-    initMap,
-    producerCountByStateId,
-    stateNameById
-  };
+  window.TinaMap = { initMap, producerCountByStateId, stateNameById };
 })();

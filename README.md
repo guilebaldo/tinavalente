@@ -43,7 +43,7 @@ Agrega entradas en `experiences` con fechas (`dates`), `capacity`, `duration` y 
 - Navegación por hash: `#/`, `#/estado/oax`, `#/productor/maria-chen`, `#/pieza/...`, `#/carrito`, `#/checkout`.
 - Carrito y piezas vendidas se guardan en `localStorage` del navegador.
 - Las piezas únicas compradas en el checkout simulado quedan marcadas como **Vendida**.
-- Imágenes: placeholders de [picsum.photos](https://picsum.photos) por semilla (`imageSeed`); rotuladas como imagen de ejemplo.
+- Imágenes: cada `imageSeed` genera un recuadro textil de ejemplo (sin fotos de terceros). El pie de foto dice «Imagen de ejemplo».
 
 ## Licencia del mapa
 

@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/styles.css" />
@@ -45,13 +45,34 @@
     </header>
     <main id="app" tabindex="-1"></main>
     <footer class="footer">
-      <p>
-        Tina Valente · Propuesta de demostración · Mapa
-        <a href="https://github.com/VictorCazanave/svg-maps" target="_blank" rel="noopener noreferrer"
-          >@svg-maps/mexico</a
-        >
-        (CC BY 4.0)
-      </p>
+      <div class="container footer-grid">
+        <div>
+          <a class="logo" href="#/">Tina <span>Valente</span></a>
+          <p>Una casa para piezas únicas y visitas a talleres de artesanos de México. Propuesta de demostración.</p>
+        </div>
+        <div>
+          <h2>Explorar</h2>
+          <ul>
+            <li><a href="#/">Mapa de productores</a></li>
+            <li><a href="#/experiencias">Experiencias</a></li>
+            <li><a href="#/nosotros">Nosotros</a></li>
+            <li><a href="#/carrito">Carrito</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>La propuesta</h2>
+          <p>Preparada por Guru Software Studio para Tina Valente. El catálogo es de ejemplo y se edita en <code>data/catalog.js</code>.</p>
+          <p>Demo: no se realizan cobros.</p>
+        </div>
+      </div>
+      <div class="container footer-base">
+        <span>© Tina Valente · contenido ficticio</span>
+        <span>
+          Mapa
+          <a href="https://github.com/VictorCazanave/svg-maps" target="_blank" rel="noopener noreferrer">@svg-maps/mexico</a>
+          (CC BY 4.0)
+        </span>
+      </div>
     </footer>
     <script src="/data/catalog.js"></script>
     <script src="/data/mexico-map.js"></script>
