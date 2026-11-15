@@ -258,6 +258,16 @@ window.TINA_CATALOG = {
       imageSeed: "caja-laca"
     },
     {
+      id: "pieza-bandeja-laca",
+      producerId: "lucia-paramo",
+      title: "Bandeja «Rocío»",
+      priceMXN: 9200,
+      dimensions: "28 × 28 cm",
+      materials: "Maque, pigmento azul",
+      story: "Geometría purépecha en tonos azules sobre fondo negro pulido.",
+      imageSeed: "bandeja-laca"
+    },
+    {
       id: "pieza-platón-talavera",
       producerId: "carmen-talavera",
       title: "Platón azul cobalto",
@@ -306,6 +316,16 @@ window.TINA_CATALOG = {
       materials: "Chaquira sobre papel maché",
       story: "Pieza decorativa, no ceremonial. Contexto cultural incluido.",
       imageSeed: "mascara-chaquira"
+    },
+    {
+      id: "pieza-bolsa-chaquira",
+      producerId: "hector-tatewari",
+      title: "Bolsa ritual decorativa",
+      priceMXN: 6800,
+      dimensions: "20 × 15 cm",
+      materials: "Chaquira y cera",
+      story: "Diseño de ojos de dios estilizado para exhibición en casa.",
+      imageSeed: "bolsa-chaquira"
     },
     {
       id: "pieza-jarrón-brunido",
