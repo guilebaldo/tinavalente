@@ -199,7 +199,6 @@
           <div class="map-legend">
             <span><span class="legend-swatch legend-swatch--accent"></span>Con productores</span>
             <span><span class="legend-swatch legend-swatch--neutral"></span>Sin presencia en la demo</span>
-            <span>Mapa <a href="https://github.com/VictorCazanave/svg-maps" target="_blank" rel="noopener noreferrer">@svg-maps/mexico</a> (CC BY 4.0)</span>
           </div>
         </div>
       </section>
@@ -632,6 +631,36 @@
     collectionArtisans: "Maestras y maestros"
   };
 
+  const IN_PAGE_ANCHORS = new Set(["mapa"]);
+
+  function scrollAfterRoute(route) {
+    const hash = window.location.hash;
+    const isSpaHash = hash.startsWith("#/") || hash === "#" || hash === "";
+    const bareAnchor =
+      hash.startsWith("#") && !hash.startsWith("#/") ? hash.slice(1).split("?")[0] : "";
+    const useInPageAnchor = route.name === "home" && IN_PAGE_ANCHORS.has(bareAnchor);
+
+    const scrollTop = () => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    };
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (useInPageAnchor) {
+          const el = document.getElementById(bareAnchor);
+          if (el) {
+            const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            el.scrollIntoView({ block: "start", behavior: reduce ? "auto" : "smooth" });
+            return;
+          }
+        }
+        if (isSpaHash || route.name !== "home") scrollTop();
+      });
+    });
+  }
+
   function markNav(route) {
     const current = {
       home: "#/",
@@ -651,8 +680,6 @@
   function render(route) {
     const root = document.getElementById("app");
     if (!root) return;
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "instant" in window ? "instant" : "auto" });
     document.title = `TINA VALENTE® — ${titles[route.name] || "Inicio"}`;
     markNav(route);
     switch (route.name) {
@@ -690,6 +717,7 @@
         renderHome(root);
     }
     root.focus({ preventScroll: true });
+    scrollAfterRoute(route);
   }
 
   document.addEventListener("DOMContentLoaded", () => {

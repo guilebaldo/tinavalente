@@ -1,3 +1,4 @@
+/* Mapa SVG: @svg-maps/mexico — https://github.com/VictorCazanave/svg-maps (CC BY 4.0) */
 (function () {
   function producerCountByStateId(stateId) {
     return window.TINA_CATALOG.producers.filter((p) => p.stateId === stateId).length;

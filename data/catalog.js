@@ -12,7 +12,8 @@ window.TINA_CATALOG = {
       "Dar a conocer y enaltecer el trabajo de las y los artesanos y llevar a cada rincón del mundo el arte hecho por manos mexicanas.",
     tagline:
       "Técnicas ancestrales con una mirada contemporánea — crédito a los saberes comunitarios y de nuestras maestras.",
-    studio: "Guru Software Studio — propuesta comercial (demo)"
+    studioUrl: "https://gurusoftware.studio",
+    studioLabel: "GuruSoftware.Studio"
   },
   stores: [
     {
@@ -587,7 +588,7 @@ window.TINA_CATALOG = {
     paragraphs: [
       "Tina Valente es artesana originaria de la Sierra Nororiental de Puebla. Conoce el oficio desde niña: tejidos y brocados en lana y algodón, arte plumario, tintes naturales como la grana cochinilla, bordado, telar de cintura y telar de pedal. Su casa une técnicas ancestrales con tendencias actuales en colecciones prêt-à-porter — vestidos y sacos de rebozo — y en la curaduría de piezas de maestras y maestros de todo México.",
       "En este sitio de demostración, Tina aparece en su doble papel: diseñadora de su colección propia y curadora que pone al frente el nombre, la comunidad y el oficio de cada artesana y artesano aliado. Como ha expresado en su propio relato público, busca dar «crédito a los saberes comunitarios y de nuestras maestras».",
-      "Los perfiles de maestras y maestros incluidos aquí son ficticios y están claramente marcados como ejemplos de vitrina. El catálogo real se cargará después en data/catalog.js."
+      "Los perfiles de maestras y maestros incluidos aquí son ficticios y están claramente marcados como ejemplos de vitrina."
     ]
   }
 };
