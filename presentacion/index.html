@@ -76,6 +76,12 @@ ul.clean li:before{content:"";position:absolute;left:0;top:.72em;width:10px;heig
 .price-row span:last-child{font-family:var(--serif);font-size:clamp(20px,1.8vw,26px);white-space:nowrap}
 .price-row.total{border-bottom:none;border-top:1px solid var(--ink);margin-top:4px}
 .price-row.total span{font-weight:500}
+.price-row small.d{display:block;font-family:var(--sans);font-size:clamp(12px,.92vw,14px);line-height:1.4;color:var(--muted);margin-top:3px;font-weight:400}
+.price-row b.k{font-family:var(--serif);font-weight:500;color:var(--green2);margin-right:8px}
+.price-row em.t{font-style:normal;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-left:6px;white-space:nowrap}
+.price-row small.p{font-size:.85em}
+.card.opt{background:transparent;border:1px dashed var(--green2)}
+.card.opt .price-row{border:none;padding:0}
 .quote{font-family:var(--serif);font-style:italic;font-size:clamp(24px,2.7vw,40px);line-height:1.2}
 .foot{flex:0 0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0 calc(14px + env(safe-area-inset-bottom));border-top:1px solid var(--line);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .dark .foot{border-color:rgba(255,255,255,.18);color:#b9c7bd}
@@ -256,51 +262,58 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
   <div class="foot"><span>05 / Qué incluye</span><span class="right"><a href="https://gurusoftware.studio" target="_blank" rel="noopener">GuruSoftware.Studio</a></span></div>
 </section>
 
-<!-- 6 VALOR -->
-<section class="slide" data-title="Por qué vale">
-  <div class="top"><span class="logo"><span class="n">TINA VALENTE<sup>®</sup></span><span class="s">Craftswoman / Designer</span></span><span class="tag">El valor</span></div>
+<!-- 6 PRECIO -->
+<section class="slide" data-title="El precio">
+  <div class="top"><span class="logo"><span class="n">TINA VALENTE<sup>®</sup></span><span class="s">Craftswoman / Designer</span></span><span class="tag">El precio</span></div>
   <div class="body">
     <div class="grid g2" style="align-items:center;gap:clamp(24px,5vw,72px)">
       <div>
-        <p class="eyebrow">Por qué vale</p>
+        <p class="eyebrow">El precio, en 4 partes</p>
         <h2><span class="big" style="font-size:inherit">$95,000</span> <span style="font-size:.5em" class="muted">+ IVA</span></h2>
-        <p class="lead">No es una página sencilla. Es una <strong>tienda que cobra, reserva y guarda tu inventario</strong>.</p>
-        <p class="small muted" style="margin-top:18px">Como referencia: en México, una tienda hecha a la medida y conectada a otros servicios cuesta de <strong>$50,000 a $80,000 o más</strong>.</p>
+        <p class="lead">No es un espacio publicitario en internet: es un <strong>sistema informático que cobra, reserva y guarda tu inventario</strong>, y que <strong>puede crecer contigo</strong>.</p>
+        <p class="small muted" style="margin-top:18px">El precio del proyecto son dos partes que se pagan una sola vez: <strong>la plataforma</strong> y <strong>el arranque</strong>. Las fotos profesionales son opcionales y el servicio anual se explica en la siguiente lámina.</p>
+        <p class="small muted" style="margin-top:12px">Como referencia: en México, una tienda hecha a la medida y conectada a otros servicios cuesta de <strong>$50,000 a $80,000 o más</strong>.</p>
       </div>
       <div>
-        <p class="tag" style="margin-bottom:6px">Lo que costaría cada parte por separado</p>
-        <div class="price-row"><span>Diseño y desarrollo</span><span>$30,000</span></div>
-        <div class="price-row"><span>Mapa interactivo</span><span>$12,000</span></div>
-        <div class="price-row"><span>Reservas de experiencias</span><span>$18,000</span></div>
-        <div class="price-row"><span>Pagos en línea</span><span>$8,000</span></div>
-        <div class="price-row"><span>Panel de administración</span><span>$20,000</span></div>
-        <div class="price-row"><span>Carga inicial de tu catálogo</span><span>$8,000</span></div>
-        <div class="price-row total"><span>Suma de las partes</span><span>$96,000</span></div>
-        <div class="price-row" style="border:none;color:var(--green)"><span><strong>Precio del proyecto</strong></span><span>$95,000 <small style="font-family:var(--sans);font-size:13px">+ IVA</small></span></div>
+        <div class="price-row"><span><b class="k">1</b><strong>La plataforma</strong><em class="t">pago único</em><small class="d">La herramienta que construyo para ti: diseño, mapa de México, tienda de piezas únicas, reservas de experiencias, pagos (tarjeta, OXXO y SPEI), envíos con tarifa fija nacional e internacional, correos de confirmación y tu propio panel.</small></span><span>$87,000</span></div>
+        <div class="price-row"><span><b class="k">2</b><strong>El arranque</strong><em class="t">pago único</em><small class="d">Dejo todo listo y doy de alta tu información: productores, experiencias, textos y hasta 50 piezas, con las fotos que tú me compartas.</small></span><span>$8,000</span></div>
+        <div class="price-row total" style="color:var(--green)"><span><strong>Precio del proyecto</strong> <small style="font-family:var(--sans);font-size:13px;font-weight:400" class="muted">(1 + 2)</small></span><span>$95,000 <small style="font-family:var(--sans);font-size:13px">+ IVA</small></span></div>
+        <div class="card opt" style="margin-top:clamp(12px,2vh,20px)">
+          <div class="price-row"><span><b class="k">3</b><strong>Fotos profesionales</strong><em class="t">opcional · aparte</em><small class="d">Sesión de fotos de hasta 30 piezas. Cada pieza extra, de $200 a $300. <strong>No está incluida en los $95,000</strong>: tú decides si la quieres.</small></span><span>+$15,000</span></div>
+        </div>
+        <p class="small muted" style="margin-top:12px"><b style="font-family:var(--serif);color:var(--green2);font-weight:500">4</b>&nbsp; El servicio anual: <strong>$7,500 al año</strong> →</p>
       </div>
     </div>
   </div>
-  <div class="foot"><span>06 / Por qué vale</span><span class="right"><a href="https://gurusoftware.studio" target="_blank" rel="noopener">GuruSoftware.Studio</a></span></div>
+  <div class="foot"><span>06 / El precio</span><span class="right"><a href="https://gurusoftware.studio" target="_blank" rel="noopener">GuruSoftware.Studio</a></span></div>
 </section>
 
-<!-- 7 MANTENER -->
-<section class="slide" data-title="Mantenerla">
-  <div class="top"><span class="logo"><span class="n">TINA VALENTE<sup>®</sup></span><span class="s">Craftswoman / Designer</span></span><span class="tag">Mantenerla</span></div>
+<!-- 7 SERVICIO ANUAL -->
+<section class="slide" data-title="El servicio anual">
+  <div class="top"><span class="logo"><span class="n">TINA VALENTE<sup>®</sup></span><span class="s">Craftswoman / Designer</span></span><span class="tag">El servicio anual</span></div>
   <div class="body">
-    <p class="eyebrow">Qué cuesta mantenerla</p>
+    <p class="eyebrow">Parte 4 · El servicio anual</p>
     <h2>Una tienda es como un taller: <em>hay que cuidarla.</em></h2>
-    <p class="lead" style="margin-bottom:clamp(14px,2.5vh,28px)">Una página sencilla casi no cuesta mantener. Esta tienda sí necesita un lugar donde vivir, una dirección y alguien que la cuide.</p>
-    <div class="grid g3">
-      <div class="card"><span class="pill g">Dominio</span><h3>Tu dirección en internet</h3><p class="muted small">Aproximadamente <strong>$600 al año</strong>.</p></div>
-      <div class="card"><span class="pill g">Servidor</span><h3>La casa de tu tienda</h3><p class="muted small">La computadora en internet donde vive tu sitio, encendida todo el día.</p></div>
-      <div class="card"><span class="pill g">Soporte</span><h3>Alguien que la cuida</h3><p class="muted small">Revisar que todo funcione y ayudarte cuando lo necesites.</p></div>
+    <p class="lead" style="margin-bottom:clamp(14px,2.5vh,28px)">Un sistema que cobra y reserva todos los días necesita un lugar donde vivir, una dirección y alguien que lo cuide: <strong>$7,500 al año</strong>, desde el año 2 en la opción A. En las opciones B y C ya va dentro de tu mensualidad.</p>
+    <div class="grid g2" style="align-items:start">
+      <div class="card">
+        <p class="tag" style="margin-bottom:4px">a · Lo que mantiene tu tienda en línea</p>
+        <div class="price-row"><span>La casa de tu tienda <small class="muted p">(servidor, Vercel)</small><small class="d">Tu parte proporcional de la computadora en internet donde vive tu sitio, encendida todo el día.</small></span><span>~$1,500</span></div>
+        <div class="price-row"><span>Tu dirección en internet <small class="muted p">(dominio)</small></span><span>~$600</span></div>
+        <div class="price-row" style="border-bottom:none"><span>Los correos de confirmación <small class="muted p">(Resend)</small> y la llave de tu panel <small class="muted p">(Clerk)</small><small class="d">A este tamaño caben en su plan gratis (hasta 3,000 correos al mes).</small></span><span>$0</span></div>
+      </div>
+      <div class="card">
+        <p class="tag" style="margin-bottom:4px">b · Alguien que la cuida</p>
+        <div class="price-row"><span>Soporte de Guilebaldo<small class="d">Unas 3 horas al mes: revisar que todo funcione y ayudarte cuando lo necesites.</small></span><span>~$5,400</span></div>
+        <div class="price-row total" style="color:var(--green)"><span><strong>Servicio anual</strong> <small style="font-family:var(--sans);font-size:13px;font-weight:400" class="muted">(a + b)</small></span><span>$7,500 <small style="font-family:var(--sans);font-size:13px">al año</small></span></div>
+      </div>
     </div>
     <div class="card soft" style="margin-top:clamp(14px,2vw,24px)">
-      <p class="small"><strong>Comisiones por cobrar:</strong> cada vez que vendes, la plataforma de pagos se queda con una pequeña comisión. <strong>La cobra la plataforma de pagos, no GuruSoftware.Studio.</strong><br>
+      <p class="small"><strong>Aparte, comisiones por cobrar:</strong> cada vez que vendes, la plataforma de pagos se queda con una pequeña comisión. <strong>La cobra la plataforma de pagos, no GuruSoftware.Studio.</strong><br>
       <span class="muted">Mercado Pago: ~2.95% a 3.49% + IVA · Stripe: 3.6% + $3 por cobro.</span></p>
     </div>
   </div>
-  <div class="foot"><span>07 / Mantenerla</span><span class="right"><a href="https://gurusoftware.studio" target="_blank" rel="noopener">GuruSoftware.Studio</a></span></div>
+  <div class="foot"><span>07 / El servicio anual</span><span class="right"><a href="https://gurusoftware.studio" target="_blank" rel="noopener">GuruSoftware.Studio</a></span></div>
 </section>
 
 <!-- 8 OPCION A -->
@@ -315,7 +328,7 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
         <ul class="clean" style="margin-top:18px">
           <li>Mensualidades sin intereses.</li>
           <li>El primer año incluye servidor, dominio y soporte.</li>
-          <li>Desde el año 2: renovación anual de <strong>$7,500</strong> (dominio, servidor y soporte de unas 3 horas al mes).</li>
+          <li>Desde el año 2: el servicio anual de <strong>$7,500</strong> (servidor, dominio y soporte de unas 3 horas al mes).</li>
         </ul>
       </div>
       <div class="grid" style="gap:14px">
@@ -391,7 +404,7 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
       <thead><tr><th></th><th>A<small>Compra a 12 meses</small></th><th>B<small>Todo incluido 5 años</small></th><th>C<small>Coding Investor</small></th></tr></thead>
       <tbody>
         <tr><th>Enganche</th><td class="v">$25,000</td><td class="v">$15,000</td><td class="v">$15,000</td></tr>
-        <tr><th>Pago mensual</th><td>$5,834 × 12 meses<br><span class="muted">luego $7,500 al año</span></td><td>$2,500 × 60 meses</td><td>$1,500 al mes<br><span class="muted">+ 8% de ventas en línea</span></td></tr>
+        <tr><th>Pago mensual</th><td>$5,834 × 12 meses<br><span class="muted">luego servicio anual de $7,500</span></td><td>$2,500 × 60 meses</td><td>$1,500 al mes<br><span class="muted">+ 8% de ventas en línea</span></td></tr>
         <tr><th>Duración</th><td>12 meses<br><span class="muted">+ renovación anual</span></td><td>60 meses (5 años)</td><td>Mínimo 36 meses</td></tr>
         <tr><th>Total aprox. en 5 años</th><td class="v">≈ $125,000</td><td class="v">$165,000</td><td>$15,000 + $1,500 × meses + 8% de ventas<br><span class="muted">(variable)</span></td></tr>
         <tr><th>¿De quién es el sitio?</th><td>Tuyo</td><td>Todo lo pagado cuenta como abono a los $95,000</td><td>Compartido; puedes comprar mi parte al terminar los 36 meses</td></tr>
@@ -403,7 +416,7 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
       <div class="card"><span class="pill g">A · Compra a 12 meses</span>
         <div class="price-row"><span>Enganche</span><span>$25,000</span></div>
         <div class="price-row"><span>Pago mensual</span><span>$5,834 × 12</span></div>
-        <div class="price-row"><span>Después</span><span>$7,500 al año</span></div>
+        <div class="price-row"><span>Servicio anual (desde el año 2)</span><span>$7,500</span></div>
         <div class="price-row"><span>Total aprox. 5 años</span><span>≈ $125,000</span></div>
         <p class="small muted" style="margin-top:10px">El sitio es tuyo. Conviene si puedes dar más al inicio y quieres pagar menos en total.</p></div>
       <div class="card"><span class="pill g">B · Todo incluido 5 años</span>
@@ -446,7 +459,7 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
     <h2>Empecemos <em>cuando tú digas</em>.</h2>
     <div class="steps">
       <div class="step"><h3>Eliges tu opción</h3><p class="small" style="color:#cfe0d4">A, B o C: la que mejor te acomode.</p></div>
-      <div class="step"><h3>Das el enganche</h3><p class="small" style="color:#cfe0d4">Y arrancamos de inmediato.</p></div>
+      <div class="step"><h3>Das el enganche</h3><p class="small" style="color:#cfe0d4">Y arrancamos de inmediato. Si quieres, agendamos la sesión de fotos (opcional).</p></div>
       <div class="step"><h3>4 semanas de trabajo</h3><p class="small" style="color:#cfe0d4">Armamos tu tienda y cargamos tu catálogo.</p></div>
       <div class="step"><h3>Lanzamiento</h3><p class="small" style="color:#cfe0d4">Tu tienda abre sus puertas al mundo.</p></div>
     </div>
