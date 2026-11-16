@@ -158,6 +158,13 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
 .dark .card.res.light{background:var(--white);color:var(--ink);border-color:var(--white)}
 .dark .card.res.light .big{color:var(--green)}
 .dark .card.res.light .tag{color:var(--muted)}
+.calc .hoy{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding-bottom:clamp(8px,1.6vh,14px);border-bottom:1px solid rgba(255,255,255,.18)}
+.dark .card.res.light .hoy{border-color:var(--line)}
+.calc .mid{font-family:var(--serif);font-size:clamp(28px,2.6vw,40px);line-height:1}
+.calc .res .big{font-size:clamp(44px,4.6vw,68px)}
+.calc fieldset.off{opacity:.4}
+.src{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.4}
+.src a{color:inherit}
 .rules .wide{grid-column:span 2}
 @media (max-width:900px){.rules .wide{grid-column:auto}}
 @media (max-width:900px){
@@ -294,22 +301,23 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
 <section class="slide" data-title="El precio">
   <div class="top"><span class="logo"><span class="n">TINA VALENTE<sup>®</sup></span><span class="s">Craftswoman / Designer</span></span><span class="tag">El precio</span></div>
   <div class="body">
-    <div class="grid g2" style="align-items:center;gap:clamp(24px,5vw,72px)">
+    <div class="grid g2" style="align-items:center;gap:clamp(24px,5vw,64px)">
       <div>
-        <p class="eyebrow">El precio del proyecto</p>
+        <p class="eyebrow">El precio de tu plataforma</p>
         <h2><span class="big" style="font-size:inherit">$50,000</span> <span style="font-size:.5em" class="muted">+ IVA</span></h2>
         <p class="lead">No es un espacio publicitario en internet: es <strong>tu propio punto de venta en línea</strong>, que cobra, reserva y guarda tu inventario, y que <strong>puede crecer contigo</strong>.</p>
-        <div class="card soft" style="margin-top:clamp(14px,2.4vh,24px)"><span class="pill g">Garantía de precio</span>
-          <p class="small">El precio más bajo del mercado por un sistema <strong>hecho a la medida</strong>. Como referencia, en México una tienda así cuesta de <strong>$50,000 a $80,000 o más</strong>.</p></div>
+        <div class="card soft" style="margin-top:clamp(12px,2.2vh,22px)"><span class="pill g">Garantía de precio</span>
+          <p class="small">Te cobro lo que el mercado cobra <strong>en su gama más baja</strong>, por algo <strong>hecho a la medida</strong> para ti. En México, una plataforma a la medida con pagos y panel cuesta de <strong>$40,000 a $80,000 + IVA</strong>, y una agencia mediana cobra de <strong>$90,000 a $130,000</strong> por una tienda básica, sin reservas ni mapa.</p>
+          <p class="src">Fuentes (noviembre 2026): <a href="https://jonitech.com/sistemas-a-medida-cancun" target="_blank" rel="noopener">JoniTech</a> · <a href="https://creatupaginaweb.mx/desarrollo-web-a-la-medida/" target="_blank" rel="noopener">creatupaginaweb.mx</a> (desde $49,900 + IVA) · <a href="https://interbits.mx/herramientas/cotizador-tienda-en-linea" target="_blank" rel="noopener">Interbits</a></p></div>
       </div>
       <div>
-        <div class="price-row"><span><b class="k">1</b><strong>La plataforma</strong><small class="d">La herramienta que construyo para ti: diseño, mapa de México, tienda de piezas únicas, reservas de experiencias, pagos (tarjeta, OXXO y SPEI), envíos con tarifa fija nacional e internacional, correos de confirmación y tu propio panel.</small></span><span>$42,000</span></div>
-        <div class="price-row"><span><b class="k">2</b><strong>El arranque</strong><small class="d">Dejo todo listo y doy de alta tu información: productores, experiencias, textos y hasta 50 piezas, con las fotos que tú me compartas.</small></span><span>$8,000</span></div>
-        <div class="price-row total" style="color:var(--green)"><span><strong>Costo del proyecto</strong> <small style="font-family:var(--sans);font-size:13px;font-weight:400" class="muted">(1 + 2) · pago único</small></span><span>$50,000 <small style="font-family:var(--sans);font-size:13px">+ IVA</small></span></div>
-        <div class="card opt" style="margin-top:clamp(12px,2vh,20px)">
-          <div class="price-row"><span><b class="k">3</b><strong>Fotos profesionales</strong><em class="t">opcional · aparte</em><small class="d">Sesión de fotos de hasta 30 piezas. Cada pieza extra, de $200 a $300. <strong>No está incluida en los $50,000</strong>: tú decides si la quieres.</small></span><span>+$15,000</span></div>
+        <div class="price-row"><span><b class="k">1</b><strong>La plataforma</strong><em class="t">pago único</em><small class="d">La herramienta completa: diseño, mapa de México, tienda de piezas únicas, reservas de experiencias, pagos (tarjeta, OXXO y SPEI), envíos, correos de confirmación y tu propio panel.</small></span><span>$50,000 <small style="font-family:var(--sans);font-size:13px">+ IVA</small></span></div>
+        <div class="price-row"><span><b class="k">2</b><strong>Primer año de servicio</strong><em class="t">obligatorio</em><small class="d">Servidor, dominio y soporte; incluye la puesta en marcha. Desde el año 2: $600 al mes o $6,990 al año.</small></span><span>$7,500</span></div>
+        <div class="card opt" style="margin-top:clamp(10px,1.8vh,18px)">
+          <p class="tag" style="margin-bottom:6px">Opcional · aparte</p>
+          <div class="price-row"><span><strong>Alta de información</strong><small class="d">Subo hasta 50 piezas, productores, experiencias y los textos que tú me entregues. Redactar textos se cotiza aparte.</small></span><span>$6,000 <small style="font-family:var(--sans);font-size:13px">+ IVA</small></span></div>
+          <div class="price-row" style="margin-top:10px"><span><strong>Fotos profesionales</strong><small class="d">Sesión de hasta 30 piezas. Cada pieza extra, de $200 a $300.</small></span><span>$15,000</span></div>
         </div>
-        <p class="small muted" style="margin-top:12px"><b style="font-family:var(--serif);color:var(--green2);font-weight:500">4</b>&nbsp; El servicio: <strong>$599 al mes o $6,990 al año</strong> →</p>
       </div>
     </div>
   </div>
@@ -320,9 +328,9 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
 <section class="slide" data-title="El servicio">
   <div class="top"><span class="logo"><span class="n">TINA VALENTE<sup>®</sup></span><span class="s">Craftswoman / Designer</span></span><span class="tag">El servicio</span></div>
   <div class="body">
-    <p class="eyebrow">Dominio, servidor y soporte</p>
+    <p class="eyebrow">Servidor, dominio y soporte</p>
     <h2>Una tienda es como un taller: <em>hay que cuidarla.</em></h2>
-    <p class="lead" style="margin-bottom:clamp(14px,2.5vh,28px)">Tu punto de venta necesita un lugar donde vivir, una dirección y alguien que lo cuide. Es un costo fijo: <strong>$599 al mes o $6,990 al año</strong>. Mientras pagas el proyecto, ya va sumado a tu mensualidad.</p>
+    <p class="lead" style="margin-bottom:clamp(14px,2.5vh,26px)">El <strong>primer año cuesta $7,500</strong> e incluye la puesta en marcha: dejar tu tienda publicada, con su dirección y lista para vender. <strong>Desde el año 2: $600 al mes o $6,990 al año</strong> (si pagas el año completo, ahorras).</p>
     <div class="grid g2" style="align-items:start">
       <div class="card">
         <p class="tag" style="margin-bottom:4px">a · Lo que mantiene tu tienda en línea</p>
@@ -333,11 +341,11 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
       <div class="card">
         <p class="tag" style="margin-bottom:4px">b · Alguien que la cuida</p>
         <div class="price-row"><span>Soporte de Guilebaldo<small class="d">Revisar que todo funcione, hacer ajustes pequeños y ayudarte cuando lo necesites.</small></span><span>~$4,890</span></div>
-        <div class="price-row total" style="color:var(--green)"><span><strong>Servicio</strong> <small style="font-family:var(--sans);font-size:13px;font-weight:400" class="muted">(a + b)</small></span><span>$6,990 <small style="font-family:var(--sans);font-size:13px">al año</small></span></div>
-        <p class="small muted" style="margin-top:8px">O <strong>$599 al mes</strong>. Cifras aproximadas por año.</p>
+        <div class="price-row total" style="color:var(--green)"><span><strong>Desde el año 2</strong> <small style="font-family:var(--sans);font-size:13px;font-weight:400" class="muted">(a + b)</small></span><span>$6,990 <small style="font-family:var(--sans);font-size:13px">al año</small></span></div>
+        <p class="small muted" style="margin-top:8px">O <strong>$600 al mes</strong>. El primer año ($7,500) suma además la puesta en marcha. Cifras aproximadas por año.</p>
       </div>
     </div>
-    <div class="card soft" style="margin-top:clamp(14px,2vw,24px)">
+    <div class="card soft" style="margin-top:clamp(14px,2vw,22px)">
       <p class="small"><strong>Aparte, comisiones por cobrar:</strong> cada vez que vendes, la plataforma de pagos se queda con una pequeña comisión. <strong>La cobra la plataforma de pagos, no GuruSoftware.Studio.</strong><br>
       <span class="muted">Mercado Pago: ~2.95% a 3.49% + IVA · Stripe: 3.6% + $3 por cobro.</span></p>
     </div>
@@ -354,20 +362,20 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
     <div class="grid g2">
       <div class="card"><span class="pill g">Forma 1 · Comprar</span>
         <h3>Tu tienda, a plazos y sin intereses</h3>
-        <div class="price-row"><span>Enganche</span><span>desde $20,000</span></div>
+        <div class="price-row"><span>Enganche</span><span>desde $10,000</span></div>
         <div class="price-row"><span>Plazo</span><span>1, 3 o 5 años</span></div>
-        <div class="price-row"><span>Mensualidad con servicio</span><span>desde $1,099</span></div>
+        <div class="price-row"><span>Al mes el primer año <small class="muted p">(con $10,000 de enganche)</small></span><span>$1,292 a $3,959</span></div>
         <div class="price-row" style="border:none"><span>Al terminar</span><span>el sitio es tuyo</span></div>
         <p class="small muted" style="margin-top:8px">Conviene si quieres que la tienda sea tuya y después pagar solo el servicio.</p></div>
-      <div class="card green"><span class="pill" style="background:rgba(255,255,255,.12);color:#fff">Forma 2 · Coding Investor</span>
+      <div class="card green"><span class="pill">Forma 2 · Coding Investor</span>
         <h3>Yo invierto mi trabajo como tu socio</h3>
-        <div class="price-row" style="border-color:rgba(255,255,255,.18)"><span>Enganche</span><span>$10,000 a $18,000</span></div>
-        <div class="price-row" style="border-color:rgba(255,255,255,.18)"><span>Mensualidad con servicio</span><span>$849 a $1,049</span></div>
-        <div class="price-row" style="border-color:rgba(255,255,255,.18)"><span>Comisión por venta en línea</span><span>1% a 5%</span></div>
+        <div class="price-row"><span>Enganche</span><span>$10,000 a $18,000</span></div>
+        <div class="price-row"><span>Al mes el primer año</span><span>$875 a $1,075</span></div>
+        <div class="price-row"><span>Comisión por venta en línea</span><span>1% a 5%</span></div>
         <div class="price-row" style="border:none"><span>Plazo mínimo</span><span>5 años</span></div>
         <p class="small" style="margin-top:8px;color:#cfe0d4">Según cuánto participe yo: a más participación, menos pagas y más comisión. Conviene si quieres empezar con menos y que yo gane cuando tú vendes.</p></div>
     </div>
-    <p class="small muted" style="margin-top:14px">En las dos formas, la mensualidad ya incluye el servicio de $599. Mensualidades sin IVA; el proyecto es + IVA.</p>
+    <p class="small muted" style="margin-top:14px">En las dos formas, la mensualidad del primer año ya incluye el servicio ($7,500 repartidos en 12 meses, $625 al mes); desde el año 2, el servicio es de $600 al mes. Mensualidades sin IVA; la plataforma es + IVA.</p>
   </div>
   <div class="foot"><span>08 / Dos formas de pagar</span><span class="right"><a href="https://gurusoftware.studio" target="_blank" rel="noopener">GuruSoftware.Studio</a></span></div>
 </section>
@@ -380,30 +388,30 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
       <div>
         <p class="eyebrow">Forma 1 · Comprar</p>
         <h2>Calcula <em>tu mensualidad</em></h2>
-        <p class="small muted" style="margin-bottom:clamp(12px,2.4vh,24px)">Sin intereses. Al terminar, <strong>el sitio es tuyo</strong> y solo pagas el servicio.</p>
-        <fieldset class="ctl"><legend class="tag">Plazo</legend>
+        <p class="small muted" style="margin-bottom:clamp(12px,2.4vh,24px)">Sin intereses. Mueve el enganche y elige el plazo. Al terminar, <strong>el sitio es tuyo</strong> y solo pagas el servicio.</p>
+        <div class="ctl"><label class="tag" for="engA">Enganche: <output id="engAv" class="val">$10,000</output></label>
+          <input type="range" id="engA" min="10000" max="50000" step="5000" value="10000" aria-describedby="engAh">
+          <div class="scale" id="engAh"><span>$10,000</span><span>$50,000</span></div></div>
+        <fieldset class="ctl" id="plazoAf"><legend class="tag">Plazo</legend>
           <div class="seg">
             <label><input type="radio" name="plazoA" value="12" checked><span>1 año</span></label>
             <label><input type="radio" name="plazoA" value="36"><span>3 años</span></label>
             <label><input type="radio" name="plazoA" value="60"><span>5 años</span></label>
           </div>
         </fieldset>
-        <div class="ctl"><label class="tag" for="engA">Enganche: <output id="engAv" class="val">$20,000</output></label>
-          <input type="range" id="engA" min="20000" max="50000" step="5000" value="20000" aria-describedby="engAh">
-          <div class="scale" id="engAh"><span>$20,000</span><span>$50,000</span></div></div>
       </div>
       <div class="card green res" aria-live="polite">
-        <p class="tag" style="color:#b9c7bd" id="mesAl">Tu mensualidad</p>
-        <p class="big" id="mesA">$3,099</p>
-        <p class="small" style="color:#cfe0d4;margin-top:6px" id="mesAs">× 12 meses · incluye el servicio de $599</p>
+        <div class="hoy"><span class="tag" style="color:#b9c7bd">Pagas hoy</span><span class="mid" id="rEngA">$10,000</span><span class="small" style="color:#cfe0d4">de enganche</span></div>
+        <p class="tag" style="color:#b9c7bd;margin-top:clamp(8px,1.6vh,14px)" id="mesAl">Cada mes del primer año</p>
+        <p class="big" id="mesA">$3,959</p>
+        <p class="small" style="color:#cfe0d4;margin-top:4px" id="mesAs">incluye el primer año de servicio ($625 al mes)</p>
         <div class="rows">
-          <div class="price-row"><span>Enganche</span><span id="rEngA">$20,000</span></div>
-          <div class="price-row"><span>Resto del proyecto</span><span id="rRestA">$30,000</span></div>
-          <div class="price-row"><span>Número de meses</span><span id="rMesesA">12</span></div>
-          <div class="price-row"><span>Total pagado en el plazo</span><span id="rTotA">$57,188</span></div>
-          <div class="price-row" style="border:none"><span>Después</span><span>$599/mes o $6,990/año</span></div>
+          <div class="price-row" id="rowA2"><span id="lblA2">Del año 2 al 3</span><span id="rA2">—</span></div>
+          <div class="price-row"><span id="lblMesesA">Meses de pago de la plataforma</span><span id="rMesesA">12</span></div>
+          <div class="price-row"><span>Total pagado en el plazo</span><span id="rTotA">$57,508</span></div>
+          <div class="price-row" style="border:none"><span>Después</span><span>$600/mes o $6,990/año</span></div>
         </div>
-        <p class="small" style="color:#b9c7bd;margin-top:6px">Montos en MXN. Mensualidades sin IVA; el proyecto es + IVA.</p>
+        <p class="small" style="color:#b9c7bd;margin-top:6px">Montos en MXN. Mensualidades sin IVA; la plataforma es + IVA.</p>
       </div>
     </div>
   </div>
@@ -426,17 +434,18 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
           <div class="money"><span>$</span><input type="text" inputmode="numeric" id="ventB" value="30,000" autocomplete="off"><span class="muted">MXN</span></div></div>
       </div>
       <div class="card res light" aria-live="polite">
-        <p class="tag">Tu mensualidad</p>
-        <p class="big" id="mesB">$849</p>
-        <p class="small muted" style="margin-top:6px">× 60 meses mínimo · incluye el servicio de $599</p>
+        <div class="hoy"><span class="tag">Pagas hoy</span><span class="mid" id="rEngB">$10,000</span><span class="small muted">de enganche</span></div>
+        <p class="tag" style="margin-top:clamp(8px,1.6vh,14px)">Cada mes del primer año</p>
+        <p class="big" id="mesB">$875</p>
+        <p class="small muted" style="margin-top:4px">incluye el primer año de servicio ($625 al mes)</p>
         <div class="rows">
-          <div class="price-row"><span>Enganche</span><span id="rEngB">$10,000</span></div>
+          <div class="price-row"><span>Del mes 13 al 60</span><span id="rMes2B">$850 al mes</span></div>
           <div class="price-row"><span>Mi comisión por venta en línea</span><span id="rComB">5%</span></div>
           <div class="price-row"><span>Comisión estimada al mes</span><span id="rEstB">$1,500</span></div>
           <div class="price-row"><span>Lo que yo invierto en tu tienda</span><span id="rInvB">$25,000</span></div>
           <div class="price-row" style="border:none"><span>Plazo</span><span>60 meses mínimo</span></div>
         </div>
-        <p class="small muted" style="margin-top:6px">La comisión se calcula sobre el monto de cada venta en línea (piezas y experiencias), no sobre tu ganancia, porque esa solo la conoces tú. La puedes revisar en la plataforma de pagos. Puedes comprar mi parte cuando quieras, pagando lo que falte del proyecto. Mensualidades sin IVA; el proyecto es + IVA.</p>
+        <p class="small muted" style="margin-top:6px">La comisión se calcula sobre el monto de cada venta en línea (piezas y experiencias), no sobre tu ganancia, porque esa solo la conoces tú. La puedes revisar en la plataforma de pagos. Puedes comprar mi parte cuando quieras, pagando lo que falte de la plataforma ($50,000). Mensualidades sin IVA; la plataforma es + IVA.</p>
       </div>
     </div>
   </div>
@@ -450,10 +459,11 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
     <p class="eyebrow">Sin letras chiquitas</p>
     <h2>Reglas <em>claras</em></h2>
     <div class="grid g3 rules">
-      <div class="card"><h3>Todo cuenta</h3><p class="muted small">Todo lo que pagas del proyecto cuenta como abono a los <strong>$50,000</strong>.</p></div>
+      <div class="card"><h3>El primer año de servicio</h3><p class="muted small">Siempre se paga: <strong>$7,500</strong>, en cualquier forma de pago. Así tu tienda tiene casa, dirección y soporte desde el primer día.</p></div>
+      <div class="card"><h3>Todo cuenta</h3><p class="muted small">Todo lo que pagas de la plataforma cuenta como abono a los <strong>$50,000</strong>.</p></div>
       <div class="card"><h3>Tu dominio, a tu nombre</h3><p class="muted small">La dirección de tu tienda siempre está a tu nombre, pase lo que pase.</p></div>
-      <div class="card"><h3>Sin sorpresas</h3><p class="muted small">Mensualidades <strong>sin intereses</strong>. El proyecto es <strong>+ IVA</strong>; las mensualidades se muestran sin IVA.</p></div>
-      <div class="card wide"><h3>Si cancelas antes de terminar de pagar</h3><p class="muted small">En la compra a plazos tienes dos caminos: <strong>liquidas lo que falte del proyecto</strong> y te entrego todo (código, dominio y traspaso), o pagas una <strong>cuota de cancelación del 30% de lo que falte</strong> del proyecto y el sitio se da de baja. En los dos casos, el dominio sigue siendo tuyo.</p></div>
+      <div class="card"><h3>Sin sorpresas</h3><p class="muted small">Mensualidades <strong>sin intereses</strong>. La plataforma y el alta de información son <strong>+ IVA</strong>; las mensualidades se muestran sin IVA.</p></div>
+      <div class="card"><h3>Si cancelas antes de terminar de pagar</h3><p class="muted small">En la compra a plazos: <strong>liquidas lo que falte de la plataforma</strong> y te entrego todo, o pagas una <strong>cuota del 30% de lo que falte</strong> de la plataforma y el sitio se da de baja. El dominio sigue siendo tuyo.</p></div>
       <div class="card"><h3>Coding Investor</h3><p class="muted small">El plazo mínimo es de <strong>5 años</strong> (60 meses).</p></div>
     </div>
   </div>
@@ -468,11 +478,11 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
     <h2>Empecemos <em>cuando tú digas</em>.</h2>
     <div class="steps">
       <div class="step"><h3>Eliges cómo pagar</h3><p class="small" style="color:#cfe0d4">Comprar o Coding Investor: la que mejor te acomode.</p></div>
-      <div class="step"><h3>Das el enganche</h3><p class="small" style="color:#cfe0d4">Y arrancamos de inmediato.</p></div>
-      <div class="step"><h3>4 semanas de trabajo</h3><p class="small" style="color:#cfe0d4">Armamos tu tienda y cargamos tu catálogo.</p></div>
+      <div class="step"><h3>Das el enganche</h3><p class="small" style="color:#cfe0d4">Desde $10,000, y arrancamos de inmediato.</p></div>
+      <div class="step"><h3>4 semanas de trabajo</h3><p class="small" style="color:#cfe0d4">Armamos tu tienda y la dejamos lista para vender.</p></div>
       <div class="step"><h3>Lanzamiento</h3><p class="small" style="color:#cfe0d4">Tu tienda abre sus puertas al mundo.</p></div>
     </div>
-    <p class="small" style="color:#cfe0d4;margin:-8px 0 clamp(14px,3vh,30px)"><strong style="color:#fff">Opcional:</strong> sesión de fotos profesionales (+$15,000), la agendamos durante esas 4 semanas.</p>
+    <p class="small" style="color:#cfe0d4;margin:-8px 0 clamp(14px,3vh,30px)"><strong style="color:#fff">Opcional:</strong> alta de información ($6,000 + IVA) y sesión de fotos profesionales ($15,000); las hacemos durante esas 4 semanas.</p>
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
       <div>
         <p class="tag" style="margin-bottom:8px">Contacto</p>
@@ -538,40 +548,49 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
 })();
 /* calculadoras */
 (function(){
-  var SERV=599,PROY=50000,ENG=20000,RESTO=30000;
+  var PLAT=50000,S1=625,S2=600;
   function fmt(n){return '$'+Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,',')}
-  // precio psicológico: redondea hacia arriba a la siguiente terminación 49 o 99
-  function psico(x){var n=Math.ceil(x-1e-9),r=n%100,b=n-r;return r<=49?b+49:b+99}
+  // mensualidades: hacia arriba al peso entero
+  function up(x){return Math.ceil(x-1e-9)}
   function $(id){return document.getElementById(id)}
-  window.__tv={psico:psico,fmt:fmt};
+  window.__tv={up:up,fmt:fmt};
   // Forma 1 · Comprar
-  var eng=$('engA');
+  var eng=$('engA'),radios=[].slice.call(document.querySelectorAll('input[name=plazoA]'));
   function calcA(){
-    var e=+eng.value,m=+document.querySelector('input[name=plazoA]:checked').value,rest=PROY-e;
-    $('engAv').textContent=fmt(e);$('rEngA').textContent=fmt(e);$('rRestA').textContent=fmt(rest);
-    if(rest<=0){
-      $('mesAl').textContent='Ya no hay mensualidades del proyecto';$('mesA').textContent=fmt(SERV);
-      $('mesAs').textContent='al mes, solo el servicio (o $6,990 al año)';$('rMesesA').textContent='—';$('rTotA').textContent=fmt(e);
-    }else{
-      var mes=psico(rest/m+SERV);
-      $('mesAl').textContent='Tu mensualidad';$('mesA').textContent=fmt(mes);
-      $('mesAs').textContent='× '+m+' meses · incluye el servicio de $599';$('rMesesA').textContent=m;$('rTotA').textContent=fmt(e+mes*m);
+    var e=+eng.value,m=+document.querySelector('input[name=plazoA]:checked').value,rest=PLAT-e;
+    $('engAv').textContent=fmt(e);$('rEngA').textContent=fmt(e);
+    var full=rest<=0;
+    $('plazoAf').classList.toggle('off',full);radios.forEach(function(r){r.disabled=full});
+    if(full){
+      $('mesAl').textContent='Cada mes del primer año (solo servicio)';$('mesA').textContent=fmt(S1);
+      $('mesAs').textContent='o $7,500 en un solo pago · sin mensualidades de la plataforma';
+      $('rowA2').style.display='none';$('lblMesesA').textContent='Meses de pago de la plataforma';$('rMesesA').textContent='Ninguno';
+      $('rTotA').textContent=fmt(PLAT+7500);
+      return;
     }
+    var m1=up(rest/m+S1),m2=up(rest/m+S2);
+    $('mesAl').textContent='Cada mes del primer año';$('mesA').textContent=fmt(m1);
+    $('mesAs').textContent='incluye el primer año de servicio ($625 al mes)';
+    if(m>12){$('rowA2').style.display='';$('lblA2').textContent='Del año 2 al '+(m/12);$('rA2').textContent=fmt(m2)+' al mes'}
+    else $('rowA2').style.display='none';
+    $('rMesesA').textContent=m;
+    $('rTotA').textContent=fmt(e+m1*12+m2*(m-12));
   }
   eng.addEventListener('input',calcA);
-  [].forEach.call(document.querySelectorAll('input[name=plazoA]'),function(r){r.addEventListener('change',calcA)});
+  radios.forEach(function(r){r.addEventListener('change',calcA)});
   calcA();
   // Forma 2 · Coding Investor
   var part=$('partB'),vent=$('ventB');
   function ventas(){var v=parseInt(String(vent.value).replace(/\D/g,''),10);return isNaN(v)?0:v}
   function calcB(){
-    var p=+part.value/100,com=+part.value/10;
+    var p=+part.value/100,com=+part.value/10,base=30000*(1-p)/60;
     $('partBv').textContent=part.value+'%';
-    $('rEngB').textContent=fmt(ENG*(1-p));
-    $('mesB').textContent=fmt(psico(RESTO*(1-p)/60+SERV));
+    $('rEngB').textContent=fmt(20000*(1-p));
+    $('mesB').textContent=fmt(up(base+S1));
+    $('rMes2B').textContent=fmt(up(base+S2))+' al mes';
     $('rComB').textContent=com+'%';
     $('rEstB').textContent=fmt(ventas()*com/100);
-    $('rInvB').textContent=fmt(PROY*p);
+    $('rInvB').textContent=fmt(PLAT*p);
   }
   part.addEventListener('input',calcB);vent.addEventListener('input',calcB);
   vent.addEventListener('blur',function(){vent.value=fmt(ventas()).slice(1)});
