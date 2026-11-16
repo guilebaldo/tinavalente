@@ -176,6 +176,9 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
 .perk p{font-size:clamp(14px,1.15vw,17px);color:var(--green)}
 .calc .note{font-size:12px;line-height:1.4;color:var(--muted);margin-top:8px}
 .dark .calc .note{color:#b9c7bd}
+.blk{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--green2);font-weight:600;margin:clamp(8px,1.6vh,14px) 0 2px}
+.blk:first-child{margin-top:0}
+.blk .k{font-family:var(--serif);font-size:16px;letter-spacing:0;text-transform:none;margin-right:8px}
 .iva{font-size:12px;line-height:1.4;letter-spacing:.02em;color:var(--muted);margin-top:clamp(10px,1.6vh,16px)}
 .dark .iva{color:#b9c7bd}
 .src{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.4}
@@ -306,7 +309,7 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
       <div class="card"><h3>Pagos</h3><p class="muted small">Con tarjeta, OXXO y SPEI.</p></div>
       <div class="card"><h3>Correos de confirmación</h3><p class="muted small">Tu cliente y tú reciben un correo con cada compra o reserva.</p></div>
       <div class="card"><h3>Dominio propio</h3><p class="muted small">Tu propia dirección en internet, a tu nombre.</p></div>
-      <div class="card green"><span class="num">4 semanas</span><p class="small">Tiempo de entrega desde la <strong>Contratación</strong>: al firmar contrato; desde ese día corren las 4 semanas de entrega.</p></div>
+      <div class="card green"><span class="num">4 semanas</span><p class="small">Tu tienda lista a partir de la contratación.</p></div>
     </div>
   </div>
   <div class="foot"><span>05 / Qué incluye</span><span class="right"><a href="https://gurusoftware.studio" target="_blank" rel="noopener">GuruSoftware.Studio</a></span></div>
@@ -318,18 +321,20 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
   <div class="body">
     <div class="grid g2" style="align-items:center;gap:clamp(24px,5vw,64px)">
       <div>
-        <p class="eyebrow">El precio de tu plataforma</p>
-        <h2><span class="big" style="font-size:inherit">$50,000</span> <span style="font-size:.5em" class="muted">+ IVA</span></h2>
-        <p class="lead">No es solo un espacio publicitario en internet: es <strong>tu propio punto de venta en línea</strong>. Cobra, reserva y lleva tu inventario, y <strong>crece contigo</strong> sumando funciones cuando las necesites.</p>
-        <p class="small muted" style="margin-top:clamp(12px,2.2vh,20px)">Un solo pago por tu tienda completa, hecha a la medida para ti.</p>
+        <p class="eyebrow">El precio</p>
+        <h2>Claro y <em>sin sorpresas</em>.</h2>
+        <p class="lead">No es solo un espacio publicitario en internet: es <strong>tu propio sistema de punto de venta en línea</strong>. Cobra, reserva y lleva tu inventario. Un sistema que también puede <strong>crecer contigo</strong> al contratar funciones nuevas cuando las necesites.</p>
       </div>
       <div>
-        <div class="price-row"><span><b class="k">1</b><strong>La plataforma</strong><em class="t">pago único</em><small class="d">La herramienta completa: diseño, mapa de México, tienda de piezas únicas, reservas de experiencias, pagos (tarjeta, OXXO y SPEI), envíos, correos de confirmación y tu propio panel.</small></span><span>$50,000</span></div>
-        <div class="price-row"><span><b class="k">2</b><strong>Primer año de servicio</strong><em class="t">obligatorio</em><small class="d">Tu tienda en línea funcionando: servidor, dominio, correos y seguridad; incluye la puesta en marcha. El soporte de gurusoftware.studio va incluido. Desde el año 2: $600 al mes o $6,990 al año.</small></span><span>$7,500</span></div>
-        <div class="card opt" style="margin-top:clamp(10px,1.8vh,18px)">
-          <p class="tag" style="margin-bottom:6px">Opcional · aparte</p>
-          <div class="price-row"><span><strong>Alta de información</strong><small class="d">Subo hasta 50 piezas, productores, experiencias y los textos que tú me entregues. Redactar textos se cotiza aparte.</small></span><span>$6,000</span></div>
-          <div class="price-row" style="margin-top:10px"><span><strong>Fotos profesionales</strong><small class="d">Sesión de hasta 30 piezas. Cada pieza extra, de $200 a $300.</small></span><span>$15,000</span></div>
+        <p class="blk"><b class="k">a</b>Pago único</p>
+        <div class="price-row"><span><strong>La plataforma</strong><small class="d">La herramienta completa: diseño, mapa de México, tienda de piezas únicas, reservas de experiencias, pagos (tarjeta, OXXO y SPEI), envíos, correos de confirmación y tu propio panel de administración.</small></span><span>$50,000</span></div>
+        <p class="blk"><b class="k">b</b>Mantenimiento anual <em class="t">obligatorio</em></p>
+        <div class="price-row"><span><strong>Primer año</strong><small class="d">Hosting y dominio para tener tu tienda en línea; incluye la puesta en marcha.</small></span><span>$7,500</span></div>
+        <div class="price-row"><span><strong>Desde el año 2</strong></span><span>$600 <small style="font-family:var(--sans);font-size:13px">al mes</small> o $6,990 <small style="font-family:var(--sans);font-size:13px">al año</small></span></div>
+        <div class="card opt" style="margin-top:clamp(10px,1.8vh,16px)">
+          <p class="blk" style="margin-top:0"><b class="k">c</b>Opcionales aparte</p>
+          <div class="price-row"><span><strong>Alta de información</strong><small class="d">Subo hasta 50 piezas, productores y experiencias, con sus textos incluidos.</small></span><span>$6,000</span></div>
+          <div class="price-row" style="margin-top:8px"><span><strong>Fotos profesionales</strong><small class="d">Sesión de hasta 30 piezas. Cada pieza extra: $300 por foto adicional.</small></span><span>$15,000</span></div>
         </div>
       </div>
     </div>
@@ -338,13 +343,13 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
   <div class="foot"><span>06 / El precio</span><span class="right"><a href="https://gurusoftware.studio" target="_blank" rel="noopener">GuruSoftware.Studio</a></span></div>
 </section>
 
-<!-- 7 SERVICIO -->
-<section class="slide" data-title="El servicio">
-  <div class="top"><span class="logo"><span class="n">TINA VALENTE<sup>®</sup></span><span class="s">Craftswoman / Designer</span></span><span class="tag">El servicio</span></div>
+<!-- 7 MANTENIMIENTO -->
+<section class="slide" data-title="El mantenimiento">
+  <div class="top"><span class="logo"><span class="n">TINA VALENTE<sup>®</sup></span><span class="s">Craftswoman / Designer</span></span><span class="tag">El mantenimiento</span></div>
   <div class="body">
-    <p class="eyebrow">El servicio</p>
+    <p class="eyebrow">El mantenimiento</p>
     <h2>Tu tienda en línea, <em>siempre funcionando</em>.</h2>
-    <p class="lead" style="margin-bottom:clamp(14px,2.5vh,26px)">Lo que pagas es mantener <strong>tu tienda en línea funcionando</strong>: servidor, dominio, correos y seguridad. Tú te dedicas a tus piezas.</p>
+    <p class="lead" style="margin-bottom:clamp(14px,2.5vh,26px)">El mantenimiento es lo que mantiene <strong>tu tienda en línea funcionando</strong> todos los días: hosting, dominio, correos y seguridad. Tú te dedicas a tus piezas.</p>
     <div class="grid g2" style="align-items:stretch">
       <div class="card green"><span class="pill">Obligatorio</span>
         <p class="tag" style="color:#b9c7bd">Primer año</p>
@@ -355,14 +360,14 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
         <div class="price-row"><span>O pagando el año completo</span><span>$6,990 <small style="font-family:var(--sans);font-size:13px">al año</small></span></div>
         <p class="small" style="margin-top:10px;color:var(--green)"><strong>Ahorras $210:</strong> 12 × $600 = $7,200 al año, contra $6,990 si pagas el año completo.</p></div>
     </div>
-    <div class="perk"><span class="pill g">Beneficio incluido</span><p><strong>Soporte de gurusoftware.studio incluido</strong> siempre que tu servicio esté activo.</p></div>
+    <div class="perk"><span class="pill g">Beneficio incluido</span><p><strong>Soporte de gurusoftware.studio incluido</strong> siempre que tu mantenimiento esté activo.</p></div>
     <div class="card soft" style="margin-top:clamp(14px,2vw,22px)">
-      <p class="small"><strong>Aparte, comisiones por cobrar:</strong> cada vez que vendes, la plataforma de pagos se queda con una pequeña comisión. <strong>La cobra la plataforma de pagos, no GuruSoftware.Studio.</strong><br>
+      <p class="small"><strong>Aparte, tarifas por cobro:</strong> cada vez que vendes, la plataforma de pagos se queda con una pequeña tarifa. <strong>La cobra la plataforma de pagos, no GuruSoftware.Studio.</strong><br>
       <span class="muted">Mercado Pago: de 2.95% a 3.49% + IVA · Stripe: 3.6% + $3 por cobro.</span></p>
     </div>
     <p class="iva">Todos los precios son más IVA.</p>
   </div>
-  <div class="foot"><span>07 / El servicio</span><span class="right"><a href="https://gurusoftware.studio" target="_blank" rel="noopener">GuruSoftware.Studio</a></span></div>
+  <div class="foot"><span>07 / El mantenimiento</span><span class="right"><a href="https://gurusoftware.studio" target="_blank" rel="noopener">GuruSoftware.Studio</a></span></div>
 </section>
 
 <!-- 8 DOS FORMAS -->
@@ -377,22 +382,22 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
         <div class="fichas">
           <div class="ficha"><span class="l">Contratación</span><span class="v">desde $10,000</span></div>
           <div class="ficha"><span class="l">Plazo</span><span class="v">hasta 5 años</span><span class="n">sin intereses</span></div>
-          <div class="ficha"><span class="l">Pago mensual</span><span class="v">desde $1,292</span><span class="n">a 5 años con $10,000 de contratación (primer año, con servicio)</span></div>
-          <div class="ficha"><span class="l">Al terminar</span><span class="v">el sitio es tuyo</span><span class="n">solo pagas el servicio de $600 al mes</span></div>
+          <div class="ficha"><span class="l">Pago mensual</span><span class="v">desde $1,292</span><span class="n">a 5 años con $10,000 de contratación (primer año, con mantenimiento)</span></div>
+          <div class="ficha"><span class="l">Al terminar</span><span class="v">el sitio es tuyo</span><span class="n">solo pagas el mantenimiento de $600 al mes</span></div>
         </div>
-        <p class="small muted" style="margin-top:10px">Conviene si quieres que la tienda sea tuya y después pagar solo el servicio.</p></div>
+        <p class="small muted" style="margin-top:10px">Conviene si quieres que la tienda sea tuya y después pagar solo el mantenimiento.</p></div>
       <div class="card green"><span class="pill">Forma 2 · Coding Investor</span>
         <h3>Yo invierto mi trabajo como tu socio</h3>
         <div class="fichas">
-          <div class="ficha"><span class="l">Contratación</span><span class="v">desde $10,000</span><span class="n">con 50% de participación mía</span></div>
-          <div class="ficha"><span class="l">Pago mensual</span><span class="v">desde $850</span><span class="n">con 50%, desde el año 2 (el primer año, $875 con servicio)</span></div>
-          <div class="ficha"><span class="l">Comisión</span><span class="v">de 1% a 5%</span><span class="n">por venta en línea</span></div>
-          <div class="ficha"><span class="l">Sociedad</span><span class="v">mínimo 5 años</span><span class="n">puedes comprar mi parte cuando quieras</span></div>
+          <div class="ficha"><span class="l">Regalía por ventas</span><span class="v">desde 1%</span><span class="n">hasta 5%, según la participación</span></div>
+          <div class="ficha"><span class="l">Contratación</span><span class="v">desde $10,000</span><span class="n">con 50% de participación</span></div>
+          <div class="ficha"><span class="l">Participación</span><span class="v">del 10% al 50%</span><span class="n">tú eliges</span></div>
+          <div class="ficha"><span class="l">Recompra</span><span class="v">cuando quieras</span><span class="n">pagas lo que falte de la plataforma</span></div>
         </div>
-        <p class="small" style="margin-top:10px;color:#cfe0d4">A más participación mía, menos pagas al mes y más comisión. Conviene si quieres empezar con menos y que yo gane cuando tú vendes.</p></div>
+        <p class="small" style="margin-top:10px;color:#cfe0d4"><strong style="color:#fff">Permanencia mínima: 5 años.</strong> Los valores “desde” dependen de la participación que elijas: con 10%, regalía de 1% y contratación de $18,000; con 50%, regalía de 5% y contratación de $10,000.</p></div>
     </div>
-    <p class="small" style="margin-top:14px;color:var(--green)"><strong>Contratación:</strong> al firmar contrato; desde ese día corren las 4 semanas de entrega.</p>
-    <p class="small muted" style="margin-top:6px">En las dos formas, la mensualidad del primer año ya incluye el servicio ($7,500 repartidos en 12 meses, $625 al mes); desde el año 2, el servicio es de $600 al mes.</p>
+    <p class="small" style="margin-top:14px;color:var(--green)"><strong>Contratación:</strong> el pago al firmar contrato.</p>
+    <p class="small muted" style="margin-top:6px">En las dos formas, la mensualidad del primer año ya incluye el mantenimiento ($7,500 repartidos en 12 meses, $625 al mes); desde el año 2, el mantenimiento es de $600 al mes.</p>
     <p class="iva">Todos los precios son más IVA.</p>
   </div>
   <div class="foot"><span>08 / Dos formas de pagar</span><span class="right"><a href="https://gurusoftware.studio" target="_blank" rel="noopener">GuruSoftware.Studio</a></span></div>
@@ -406,11 +411,11 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
       <div>
         <p class="eyebrow">Forma 1 · Comprar</p>
         <h2>Calcula <em>tu mensualidad</em></h2>
-        <p class="small muted" style="margin-bottom:clamp(12px,2.4vh,24px)">Sin intereses. Elige cuánto pagas de contratación y el plazo. Al terminar, <strong>el sitio es tuyo</strong> y solo pagas el servicio.</p>
+        <p class="small muted" style="margin-bottom:clamp(12px,2.4vh,24px)">Sin intereses. Elige cuánto pagas de contratación y el plazo. Al terminar, <strong>el sitio es tuyo</strong> y solo pagas el mantenimiento.</p>
         <div class="ctl"><label class="tag" for="engA">Contratación: <output id="engAv" class="val">$10,000</output></label>
           <input type="range" id="engA" min="10000" max="50000" step="5000" value="10000" aria-describedby="engAh">
           <div class="scale" id="engAh"><span>$10,000</span><span>$50,000</span></div>
-          <p class="note">Contratación: al firmar contrato; desde ese día corren las 4 semanas de entrega.</p></div>
+          <p class="note">Contratación: el pago al firmar contrato.</p></div>
         <fieldset class="ctl" id="plazoAf"><legend class="tag">Plazo</legend>
           <div class="seg">
             <label><input type="radio" name="plazoA" value="12" checked><span>1 año</span></label>
@@ -423,7 +428,7 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
         <div class="hoy"><span class="tag" style="color:#b9c7bd">Pagas hoy</span><span class="mid" id="rEngA">$10,000</span><span class="small" style="color:#cfe0d4">de contratación</span></div>
         <p class="tag" style="color:#b9c7bd;margin-top:clamp(8px,1.6vh,14px)" id="mesAl">Cada mes del primer año</p>
         <p class="big" id="mesA">$3,959</p>
-        <p class="small" style="color:#cfe0d4;margin-top:4px" id="mesAs">incluye el primer año de servicio ($625 al mes)</p>
+        <p class="small" style="color:#cfe0d4;margin-top:4px" id="mesAs">incluye el primer año de mantenimiento ($625 al mes)</p>
         <div class="rows">
           <div class="price-row" id="rowA2"><span id="lblA2">Del año 2 al 3</span><span id="rA2">—</span></div>
           <div class="price-row"><span id="lblMesesA">Meses de pago de la plataforma</span><span id="rMesesA">12</span></div>
@@ -446,11 +451,11 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
       <div>
         <p class="eyebrow">Forma 2 · Coding Investor</p>
         <h2>Tu <em>socio tecnológico</em></h2>
-        <p class="small" style="color:#dfe7e1;margin-bottom:clamp(12px,2.4vh,24px)">Yo invierto mi trabajo en tu tienda y gano cuando tú vendes. Tú eliges cuánto participo: <strong>a más participación mía, menos pagas al mes</strong>, y mi comisión por venta sube.</p>
+        <p class="small" style="color:#dfe7e1;margin-bottom:clamp(12px,2.4vh,24px)">Yo invierto mi trabajo en tu tienda y gano cuando tú vendes. Tú eliges cuánto participo: <strong>a más participación mía, menos pagas al mes</strong>, y mi regalía por venta sube.</p>
         <div class="ctl"><label class="tag" for="partB">Mi participación: <output id="partBv" class="val">50%</output></label>
           <input type="range" id="partB" min="10" max="50" step="10" value="50" aria-describedby="partBh">
           <div class="scale" id="partBh"><span>10%</span><span>20%</span><span>30%</span><span>40%</span><span>50%</span></div></div>
-        <p class="note" style="margin:-6px 0 clamp(12px,2.4vh,22px)">Contratación: al firmar contrato; desde ese día corren las 4 semanas de entrega.</p>
+        <p class="note" style="margin:-6px 0 clamp(12px,2.4vh,22px)">Contratación: el pago al firmar contrato.</p>
         <div class="ctl"><label class="tag" for="ventB">Ventas en línea al mes (ejemplo)</label>
           <div class="money"><span>$</span><input type="text" inputmode="numeric" id="ventB" value="30,000" autocomplete="off"><span class="muted">MXN</span></div></div>
       </div>
@@ -458,15 +463,16 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
         <div class="hoy"><span class="tag">Pagas hoy</span><span class="mid" id="rEngB">$10,000</span><span class="small muted">de contratación</span></div>
         <p class="tag" style="margin-top:clamp(8px,1.6vh,14px)">Cada mes del primer año</p>
         <p class="big" id="mesB">$875</p>
-        <p class="small muted" style="margin-top:4px">incluye el primer año de servicio ($625 al mes)</p>
+        <p class="small muted" style="margin-top:4px">incluye el primer año de mantenimiento ($625 al mes)</p>
         <div class="rows">
           <div class="price-row"><span>Del mes 13 al 60</span><span id="rMes2B">$850 al mes</span></div>
-          <div class="price-row"><span>Mi comisión por venta en línea</span><span id="rComB">5%</span></div>
-          <div class="price-row"><span>Comisión estimada al mes</span><span id="rEstB">$1,500</span></div>
+          <div class="price-row"><span>Mi regalía por venta en línea</span><span id="rComB">5%</span></div>
+          <div class="price-row"><span>Regalía estimada al mes</span><span id="rEstB">$1,500</span></div>
           <div class="price-row"><span>Lo que yo invierto en tu tienda</span><span id="rInvB">$25,000</span></div>
+          <div class="price-row"><span>Recompra al inicio del año 1<small class="d">Lo que falte de la plataforma ($50,000 menos tu contratación).</small></span><span id="rRecB">$40,000</span></div>
           <div class="price-row" style="border:none"><span>Plazo</span><span>60 meses mínimo</span></div>
         </div>
-        <p class="small muted" style="margin-top:6px">La comisión se calcula sobre el monto de cada venta en línea (piezas y experiencias), no sobre tu ganancia, porque esa solo la conoces tú. La puedes revisar en la plataforma de pagos. Puedes comprar mi parte cuando quieras, pagando lo que falte de la plataforma ($50,000).</p>
+        <p class="small muted" style="margin-top:6px">La regalía es sobre cada venta en línea y la puedes revisar en la plataforma de pagos. Cuando tu tienda ya vende y genera ingresos cada mes, vale más; por eso recomprar la parte de gurusoftware.studio cuesta más de lo que invirtió.</p>
       </div>
     </div>
     <p class="iva">Todos los precios son más IVA.</p>
@@ -481,7 +487,7 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
     <p class="eyebrow">Sin letras chiquitas</p>
     <h2>Reglas <em>claras</em></h2>
     <div class="grid g3 rules">
-      <div class="card"><h3>El primer año de servicio</h3><p class="muted small">Siempre se paga: <strong>$7,500</strong>, en cualquier forma de pago. Así tu tienda está en línea y funcionando desde el primer día, con el soporte de gurusoftware.studio incluido.</p></div>
+      <div class="card"><h3>El primer año de mantenimiento</h3><p class="muted small">Siempre se paga: <strong>$7,500</strong>, en cualquier forma de pago. Así tu tienda está en línea y funcionando desde el primer día, con el soporte de gurusoftware.studio incluido.</p></div>
       <div class="card"><h3>Todo cuenta</h3><p class="muted small">Todo lo que pagas de la plataforma cuenta como abono a los <strong>$50,000</strong>.</p></div>
       <div class="card"><h3>Tu dominio, a tu nombre</h3><p class="muted small">La dirección de tu tienda siempre está a tu nombre, pase lo que pase.</p></div>
       <div class="card"><h3>Sin sorpresas</h3><p class="muted small">Mensualidades <strong>sin intereses</strong>. <strong>Todos los precios son más IVA.</strong></p></div>
@@ -501,7 +507,7 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
     <h2>Empecemos <em>cuando tú digas</em>.</h2>
     <div class="steps">
       <div class="step"><h3>Eliges cómo pagar</h3><p class="small" style="color:#cfe0d4">Comprar o Coding Investor: la que mejor te acomode.</p></div>
-      <div class="step"><h3>Firmas y pagas la contratación</h3><p class="small" style="color:#cfe0d4">Desde $10,000. Ese día arrancamos y empieza a correr el plazo de 4 semanas.</p></div>
+      <div class="step"><h3>Firmas y pagas la contratación</h3><p class="small" style="color:#cfe0d4">Desde $10,000. Ese día arrancamos.</p></div>
       <div class="step"><h3>4 semanas de trabajo</h3><p class="small" style="color:#cfe0d4">Armamos tu tienda y la dejamos lista para vender.</p></div>
       <div class="step"><h3>Lanzamiento</h3><p class="small" style="color:#cfe0d4">Tu tienda abre sus puertas al mundo.</p></div>
     </div>
@@ -586,7 +592,7 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
     var full=rest<=0;
     $('plazoAf').classList.toggle('off',full);radios.forEach(function(r){r.disabled=full});
     if(full){
-      $('mesAl').textContent='Cada mes del primer año (solo servicio)';$('mesA').textContent=fmt(S1);
+      $('mesAl').textContent='Cada mes del primer año (solo mantenimiento)';$('mesA').textContent=fmt(S1);
       $('mesAs').textContent='o $7,500 en un solo pago · sin mensualidades de la plataforma';
       $('rowA2').style.display='none';$('lblMesesA').textContent='Meses de pago de la plataforma';$('rMesesA').textContent='Ninguno';
       $('rTotA').textContent=fmt(PLAT+7500);
@@ -594,7 +600,7 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
     }
     var m1=up(rest/m+S1),m2=up(rest/m+S2);
     $('mesAl').textContent='Cada mes del primer año';$('mesA').textContent=fmt(m1);
-    $('mesAs').textContent='incluye el primer año de servicio ($625 al mes)';
+    $('mesAs').textContent='incluye el primer año de mantenimiento ($625 al mes)';
     if(m>12){$('rowA2').style.display='';$('lblA2').textContent='Del año 2 al '+(m/12);$('rA2').textContent=fmt(m2)+' al mes'}
     else $('rowA2').style.display='none';
     $('rMesesA').textContent=m;
@@ -615,6 +621,7 @@ table.cmp td.v{font-family:var(--serif);font-size:clamp(18px,1.6vw,23px)}
     $('rComB').textContent=com+'%';
     $('rEstB').textContent=fmt(ventas()*com/100);
     $('rInvB').textContent=fmt(PLAT*p);
+    $('rRecB').textContent=fmt(PLAT-20000*(1-p));
   }
   part.addEventListener('input',calcB);vent.addEventListener('input',calcB);
   vent.addEventListener('blur',function(){vent.value=fmt(ventas()).slice(1)});
