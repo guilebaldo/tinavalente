@@ -1,16 +1,18 @@
 /* Tina Valente — boutique premium (demo) */
 :root {
-  --accent: #8b1e3f;
-  --accent-deep: #5e1229;
-  --accent-mid: #a33a58;
-  --accent-soft: #f4e6ea;
-  --ink: #1c1416;
-  --muted: #6b5e62;
-  --line: #e7dfd8;
-  --bg: #f7f3ee;
-  --bg-warm: #fbf8f4;
-  --surface: #fffcf9;
-  --cream: #f3ebe3;
+  --accent: #1f4332;
+  --accent-deep: #0f2b20;
+  --accent-mid: #2f5a45;
+  --accent-soft: #e8f1ec;
+  --cochineal: #8b2541;
+  --cochineal-soft: #f6e8ec;
+  --ink: #121212;
+  --muted: #5c5f5d;
+  --line: #e4e8e5;
+  --bg: #ffffff;
+  --bg-warm: #fafcfb;
+  --surface: #ffffff;
+  --cream: #f4f7f5;
   --radius: 2px;
   --serif: "Cormorant Garamond", "Palatino Linotype", Georgia, serif;
   --sans: "Outfit", "DM Sans", system-ui, sans-serif;
@@ -115,18 +117,41 @@ select {
   gap: 1rem;
 }
 
-.logo {
-  font-family: var(--serif);
-  font-size: 1.65rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
+.logo-word {
   text-decoration: none;
+  color: var(--ink);
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.18rem;
+}
+
+.logo-word__main {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
   line-height: 1;
 }
 
-.logo span {
-  font-style: italic;
-  color: var(--accent);
+.logo-word__main sup {
+  font-size: 0.45em;
+  letter-spacing: 0;
+}
+
+.logo-word__sub {
+  font-family: var(--sans);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.logo-word--footer .logo-word__main {
+  color: #fff;
+}
+
+.logo-word--footer .logo-word__sub {
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .nav-toggle {
@@ -296,11 +321,11 @@ em.serif {
   min-height: min(86vh, 780px);
   display: grid;
   align-items: end;
-  color: #f8f1ea;
+  color: #f8fbf9;
   overflow: hidden;
   background:
-    radial-gradient(ellipse 70% 55% at 85% 10%, rgba(232, 164, 176, 0.28), transparent 60%),
-    linear-gradient(165deg, #4a1a28 0%, #2a1018 42%, #14080c 100%);
+    radial-gradient(ellipse 60% 50% at 15% 0%, rgba(143, 37, 65, 0.22), transparent 55%),
+    linear-gradient(165deg, #254a38 0%, #1a3428 45%, #0f2219 100%);
 }
 
 .hero__veil {
@@ -321,7 +346,7 @@ em.serif {
 }
 
 .hero .eyebrow {
-  color: #f0c4cf;
+  color: #cfe0d6;
 }
 
 .hero h1 {
@@ -429,7 +454,7 @@ em.serif {
 }
 
 #mexico-map-svg path.state.has-producers {
-  fill: #c96b82;
+  fill: #4e7c62;
   cursor: pointer;
 }
 
@@ -734,6 +759,74 @@ em.serif {
   border-color: transparent;
   background: var(--accent-soft);
   color: var(--accent-deep);
+}
+
+.badge--cochineal {
+  border-color: transparent;
+  background: var(--cochineal-soft);
+  color: var(--cochineal);
+}
+
+.auth-card {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.2rem;
+  border: 1px solid var(--line);
+  background: var(--bg-warm);
+}
+
+.auth-card h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.auth-card dl {
+  margin: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.auth-card dt {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.auth-card dd {
+  margin: 0 0 0.35rem;
+}
+
+.placeholder-note {
+  margin-top: 1.5rem;
+  padding: 1rem 1.1rem;
+  border: 1px dashed var(--line);
+  color: var(--muted);
+  font-size: 0.9rem;
+  background: var(--surface);
+}
+
+.card__artisan {
+  margin: 0.35rem 0 0;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.store-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+}
+
+.store-list li {
+  padding: 1rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.store-list strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 
 /* Story / producer */

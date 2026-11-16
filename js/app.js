@@ -20,8 +20,33 @@
     return catalog().producers.find((p) => p.id === id);
   }
 
+  function enrichPiece(piece) {
+    const producer = piece.producerId ? producerById(piece.producerId) : null;
+    const isTina = piece.collection === "tina";
+    return {
+      ...piece,
+      collection: piece.collection || "artesanos",
+      authorshipType:
+        piece.authorshipType ||
+        (isTina ? "Diseño Tina Valente" : "Obra de maestra/o artesano"),
+      artisanName: piece.artisanName || producer?.name || "Tina Valente",
+      community: piece.community || producer?.community || "",
+      stateName: piece.stateName || producer?.stateName || "",
+      technique: piece.technique || producer?.craft || piece.materials,
+      workHoursApprox: piece.workHoursApprox || "Por documentar"
+    };
+  }
+
+  function allPieces() {
+    return catalog().pieces.map(enrichPiece);
+  }
+
+  function piecesInCollection(collection) {
+    return allPieces().filter((p) => p.collection === collection);
+  }
+
   function piecesForProducer(producerId) {
-    return catalog().pieces.filter((p) => p.producerId === producerId);
+    return allPieces().filter((p) => p.producerId === producerId && p.collection === "artesanos");
   }
 
   function experiencesForProducer(producerId) {
@@ -57,6 +82,10 @@
   }
 
   function producerCard(producer) {
+    const sample =
+      producer.isExampleProfile !== false
+        ? '<span class="badge badge--cochineal">Perfil de ejemplo</span>'
+        : "";
     return `
       <article class="card reveal">
         <a class="card__link" href="#/productor/${producer.id}">
@@ -65,24 +94,47 @@
             <p class="card__meta">${escapeHtml(producer.stateName)}</p>
             <h3 class="card__title">${escapeHtml(producer.name)}</h3>
             <p class="card__excerpt">${escapeHtml(producer.craft)}</p>
+            ${sample}
           </div>
         </a>
       </article>
     `;
   }
 
-  function pieceCard(piece) {
+  function authorshipBadge(type) {
+    if (type === "Colaboración") return "badge badge--cochineal";
+    if (type === "Diseño Tina Valente") return "badge badge--accent";
+    return "badge";
+  }
+
+  function authorshipCard(piece) {
+    return `
+      <aside class="auth-card" aria-labelledby="auth-title">
+        <h2 id="auth-title">Autoría</h2>
+        <dl>
+          <div><dt>Tipo</dt><dd><span class="${authorshipBadge(piece.authorshipType)}">${escapeHtml(piece.authorshipType)}</span></dd></div>
+          <div><dt>Quién la hizo</dt><dd>${escapeHtml(piece.artisanName)}</dd></div>
+          <div><dt>Comunidad</dt><dd>${escapeHtml(piece.community)}</dd></div>
+          <div><dt>Estado</dt><dd>${escapeHtml(piece.stateName)}</dd></div>
+          <div><dt>Técnica</dt><dd>${escapeHtml(piece.technique)}</dd></div>
+          <div><dt>Tiempo aproximado</dt><dd>${escapeHtml(piece.workHoursApprox)}</dd></div>
+        </dl>
+      </aside>`;
+  }
+
+  function pieceCard(pieceRaw) {
+    const piece = enrichPiece(pieceRaw);
     const sold = TinaStorage.isPieceSold(piece.id);
-    const producer = producerById(piece.producerId);
     return `
       <article class="card reveal">
         <a class="card__link" href="#/pieza/${piece.id}">
           ${media(piece.imageSeed, piece.title)}
           <div class="card__body">
-            <p class="card__meta">${escapeHtml(producer?.name || "")}</p>
+            <p class="card__meta">${escapeHtml(piece.collection === "tina" ? "Colección Tina Valente" : "Maestras y maestros")}</p>
             <h3 class="card__title">${escapeHtml(piece.title)}</h3>
+            <p class="card__artisan">${escapeHtml(piece.artisanName)} · ${escapeHtml(piece.stateName)}</p>
             <p class="card__price">${TinaCart.formatMXN(piece.priceMXN)}</p>
-            ${sold ? '<span class="badge badge--sold">Vendida</span>' : '<span class="badge badge--accent">Pieza única</span>'}
+            ${sold ? '<span class="badge badge--sold">Vendida</span>' : `<span class="${authorshipBadge(piece.authorshipType)}">${escapeHtml(piece.authorshipType)}</span>`}
           </div>
         </a>
       </article>
@@ -102,18 +154,20 @@
   function renderHome(root) {
     const featured = catalog().producers.filter((p) => p.featured);
     const states = statesWithProducers();
-    const pieceCount = catalog().pieces.length;
+    const brand = catalog().brand;
+    const tinaCount = piecesInCollection("tina").length;
+    const artisanCount = piecesInCollection("artesanos").length;
     const expCount = catalog().experiences.length;
     root.innerHTML = `
       <section class="hero">
         <div class="hero__veil" aria-hidden="true"></div>
         <div class="hero__inner reveal">
-          <p class="eyebrow">Casa de artesanía mexicana</p>
-          <h1>Piezas únicas, <em class="serif">firmadas por quien las hace.</em></h1>
-          <p class="lead">${escapeHtml(catalog().brand.tagline)}. Elige un estado en el mapa y conoce el taller, no un inventario anónimo.</p>
+          <p class="eyebrow">${escapeHtml(brand.legalName)}</p>
+          <h1>${escapeHtml(brand.galleryPhrase)}</h1>
+          <p class="lead">${escapeHtml(brand.purpose)}</p>
           <div class="btn-row">
             <a class="btn btn--primary" href="#mapa">Explorar el mapa</a>
-            <a class="btn btn--secondary" href="#/experiencias">Visitar un taller</a>
+            <a class="btn btn--secondary" href="#/coleccion-tina">Colección Tina Valente</a>
           </div>
         </div>
       </section>
@@ -122,7 +176,7 @@
           <p class="eyebrow">Origen</p>
           <div class="split">
             <h2>México, taller por taller</h2>
-            <p class="lead">Los estados en granate tienen productores en esta propuesta. En el teléfono, usa la lista junto al mapa: cada nombre abre ese estado.</p>
+            <p class="lead">Los estados en verde bosque tienen maestras y maestros en esta demo. El crédito al artesano va al frente en cada pieza.</p>
           </div>
           <div class="map-layout" data-map-root>
             <div class="map-wrapper">
@@ -153,13 +207,13 @@
         <div class="container split">
           <div>
             <p class="eyebrow">La casa</p>
-            <h2>Una boutique de historias, no de volumen.</h2>
+            <h2>Diseño propio y voz de maestras y maestros.</h2>
           </div>
           <div>
-            <p class="lead">Cada pieza existe una sola vez. Cuando se adquiere, queda marcada como vendida: el oficio no se reproduce en serie.</p>
+            <p class="lead">${escapeHtml(brand.tagline)}</p>
             <div class="stat-row">
-              <div><strong>${catalog().producers.length}</strong><span>Productores</span></div>
-              <div><strong>${pieceCount}</strong><span>Piezas únicas</span></div>
+              <div><strong>${tinaCount}</strong><span>Colección Tina</span></div>
+              <div><strong>${artisanCount}</strong><span>Obra aliada</span></div>
               <div><strong>${expCount}</strong><span>Visitas a taller</span></div>
             </div>
           </div>
@@ -228,6 +282,7 @@
           ${media(producer.imageSeed, `Retrato de ejemplo de ${producer.name}`)}
           <div>
             <p class="eyebrow">${escapeHtml(producer.craft)}</p>
+            ${producer.isExampleProfile !== false ? '<span class="badge badge--cochineal">Perfil de ejemplo</span>' : ""}
             <h1>${escapeHtml(producer.name)}</h1>
             <p class="story-kicker">${escapeHtml(producer.specialty)}</p>
             <ul class="meta-list">
@@ -303,26 +358,36 @@
   }
 
   function renderPiece(root, pieceId) {
-    const piece = catalog().pieces.find((item) => item.id === pieceId);
-    if (!piece) {
+    const raw = catalog().pieces.find((item) => item.id === pieceId);
+    if (!raw) {
       root.innerHTML = `<div class="container page-pad"><h1>Pieza no encontrada</h1></div>`;
       return;
     }
-    const producer = producerById(piece.producerId);
+    const piece = enrichPiece(raw);
+    const producer = piece.producerId ? producerById(piece.producerId) : null;
     const sold = TinaStorage.isPieceSold(piece.id);
+    const collectionCrumb =
+      piece.collection === "tina"
+        ? { href: "#/coleccion-tina", label: "Colección Tina Valente" }
+        : { href: "#/coleccion-artesanos", label: "Maestras y maestros" };
+    const artisanLine =
+      producer && piece.collection === "artesanos"
+        ? `<tr><th>Artesana/o</th><td><a href="#/productor/${producer.id}">${escapeHtml(producer.name)}</a></td></tr>`
+        : `<tr><th>Diseño</th><td>${escapeHtml(piece.artisanName)}</td></tr>`;
     root.innerHTML = `
       <div class="container page-pad">
         ${crumbs([
           { href: "#/", label: "Inicio" },
-          { href: `#/productor/${producer?.id}`, label: producer?.name || "Productor" },
+          collectionCrumb,
           { label: piece.title }
         ])}
         <div class="piece-hero">
           ${media(piece.imageSeed, piece.title)}
           <div class="piece-panel">
-            <p class="eyebrow">${sold ? "Vendida" : "Pieza única"}</p>
+            <p class="eyebrow">${sold ? "Vendida" : escapeHtml(piece.artisanName)}</p>
             <h1>${escapeHtml(piece.title)}</h1>
             <p class="price-xl">${TinaCart.formatMXN(piece.priceMXN)}</p>
+            <p><span class="${authorshipBadge(piece.authorshipType)}">${escapeHtml(piece.authorshipType)}</span></p>
             ${
               sold
                 ? '<p class="notice">Esta pieza ya fue adquirida en la demostración y no vuelve al catálogo.</p>'
@@ -332,8 +397,9 @@
             <table class="spec-table">
               <tr><th>Materiales</th><td>${escapeHtml(piece.materials)}</td></tr>
               <tr><th>Medidas</th><td>${escapeHtml(piece.dimensions)}</td></tr>
-              <tr><th>Productor</th><td><a href="#/productor/${producer?.id}">${escapeHtml(producer?.name || "")}</a></td></tr>
-              <tr><th>Origen</th><td>${escapeHtml(producer?.stateName || "")}</td></tr>
+              ${artisanLine}
+              <tr><th>Comunidad</th><td>${escapeHtml(piece.community)}</td></tr>
+              <tr><th>Estado</th><td>${escapeHtml(piece.stateName)}</td></tr>
             </table>
             <div class="btn-row">
               <button type="button" class="btn btn--primary" id="add-piece-btn" ${sold ? "disabled" : ""}>
@@ -343,6 +409,7 @@
             </div>
           </div>
         </div>
+        ${authorshipCard(piece)}
       </div>`;
     const button = root.querySelector("#add-piece-btn");
     if (button && !sold) {
@@ -352,6 +419,30 @@
         else if (result.reason === "duplicate") button.textContent = "Ya está en el carrito";
       });
     }
+  }
+
+  function renderCollectionTina(root) {
+    const pieces = piecesInCollection("tina");
+    root.innerHTML = `
+      <div class="container page-pad">
+        ${crumbs([{ href: "#/", label: "Inicio" }, { label: "Colección Tina Valente" }])}
+        <p class="eyebrow">Diseño propio</p>
+        <h1>Colección Tina Valente</h1>
+        <p class="lead">Vestidos, sacos y rebozos prêt-à-porter. Piezas de ejemplo que muestran la línea de diseño de la casa, con autoría visible en cada ficha.</p>
+        <div class="grid grid--pieces" style="margin-top:2.5rem">${pieces.map(pieceCard).join("")}</div>
+      </div>`;
+  }
+
+  function renderCollectionArtisans(root) {
+    const pieces = piecesInCollection("artesanos");
+    root.innerHTML = `
+      <div class="container page-pad">
+        ${crumbs([{ href: "#/", label: "Inicio" }, { label: "Maestras y maestros" }])}
+        <p class="eyebrow">Curaduría</p>
+        <h1>Maestras y maestros artesanos</h1>
+        <p class="lead">Obra de productores aliados. Los perfiles son ficticios y están marcados como ejemplo; el nombre de quien hizo cada pieza va al frente.</p>
+        <div class="grid grid--pieces" style="margin-top:2.5rem">${pieces.map(pieceCard).join("")}</div>
+      </div>`;
   }
 
   function renderExperiences(root) {
@@ -499,13 +590,30 @@
 
   function renderAbout(root) {
     const about = catalog().about;
+    const brand = catalog().brand;
+    const stores = catalog().stores || [];
     root.innerHTML = `
       <div class="container container--narrow page-pad">
         ${crumbs([{ href: "#/", label: "Inicio" }, { label: "Nosotros" }])}
-        <p class="eyebrow">La marca</p>
+        <p class="eyebrow">${escapeHtml(brand.legalName)}</p>
         <h1>${escapeHtml(about.title)}</h1>
+        <p class="lead serif">${escapeHtml(about.galleryPhrase || brand.galleryPhrase)}</p>
         <div class="prose">
           ${about.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
+        </div>
+        <hr class="rule" />
+        <h2>Tiendas físicas</h2>
+        <ul class="store-list">
+          ${stores
+            .map(
+              (store) =>
+                `<li><strong>${escapeHtml(store.name)}</strong><span>${escapeHtml(store.address)}</span></li>`
+            )
+            .join("")}
+        </ul>
+        <div class="placeholder-note" role="note">
+          <strong>Espacio de ejemplo</strong>
+          <p>Aquí irá la transparencia de pago a artesanas y artesanos, certificados o sellos de origen, cuando existan datos verificables. Esta demo no muestra porcentajes ni certificaciones inventadas.</p>
         </div>
       </div>`;
   }
@@ -519,12 +627,16 @@
     cart: "Carrito",
     checkout: "Checkout",
     confirmation: "Confirmación",
-    about: "Nosotros"
+    about: "Nosotros",
+    collectionTina: "Colección Tina Valente",
+    collectionArtisans: "Maestras y maestros"
   };
 
   function markNav(route) {
     const current = {
       home: "#/",
+      collectionTina: "#/coleccion-tina",
+      collectionArtisans: "#/coleccion-artesanos",
       experiences: "#/experiencias",
       about: "#/nosotros",
       cart: "#/carrito",
@@ -541,7 +653,7 @@
     if (!root) return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     window.scrollTo({ top: 0, behavior: reduce ? "auto" : "instant" in window ? "instant" : "auto" });
-    document.title = `Tina Valente — ${titles[route.name] || "Inicio"}`;
+    document.title = `TINA VALENTE® — ${titles[route.name] || "Inicio"}`;
     markNav(route);
     switch (route.name) {
       case "state":
@@ -567,6 +679,12 @@
         break;
       case "about":
         renderAbout(root);
+        break;
+      case "collectionTina":
+        renderCollectionTina(root);
+        break;
+      case "collectionArtisans":
+        renderCollectionArtisans(root);
         break;
       default:
         renderHome(root);

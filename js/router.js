@@ -35,6 +35,10 @@
           return { name: "confirmation", params: {} };
         case "nosotros":
           return { name: "about", params: {} };
+        case "coleccion-tina":
+          return { name: "collectionTina", params: {} };
+        case "coleccion-artesanos":
+          return { name: "collectionArtisans", params: {} };
         default:
           return { name: "home", params: {} };
       }

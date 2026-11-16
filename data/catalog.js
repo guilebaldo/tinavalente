@@ -4,18 +4,34 @@
  */
 window.TINA_CATALOG = {
   brand: {
-    name: "Tina Valente",
-    tagline: "Artesanías que cuentan quiénes las hacen",
-    accent: "#8B1E3F",
+    legalName: "Casa de Innovación y Diseño Artesano Tina Valente",
+    name: "TINA VALENTE",
+    logoSub: "Craftswoman / Designer",
+    galleryPhrase: "Un lugar en donde resurge el espíritu artístico de México",
+    purpose:
+      "Dar a conocer y enaltecer el trabajo de las y los artesanos y llevar a cada rincón del mundo el arte hecho por manos mexicanas.",
+    tagline:
+      "Técnicas ancestrales con una mirada contemporánea — crédito a los saberes comunitarios y de nuestras maestras.",
     studio: "Guru Software Studio — propuesta comercial (demo)"
   },
+  stores: [
+    {
+      name: "Casa del Mendrugo",
+      address: "4 Sur 304, Centro Histórico, Puebla, Pue."
+    },
+    {
+      name: "Museo Internacional del Barroco",
+      address: "Tienda del museo, Puebla, Pue."
+    }
+  ],
   producers: [
     {
       id: "maria-chen",
       name: "María Chen López",
       stateId: "oax",
       stateName: "Oaxaca",
-      community: "Teotitlán del Valle (comunidad ficticia de ejemplo)",
+      community: "Teotitlán del Valle (perfil de ejemplo)",
+      isExampleProfile: true,
       craft: "Textiles en telar de pedal",
       specialty: "Tapetes y piezas con cochinilla y índigo",
       story:
@@ -29,6 +45,7 @@ window.TINA_CATALOG = {
       stateId: "oax",
       stateName: "Oaxaca",
       community: "San Martín Tilcajete (comunidad ficticia de ejemplo)",
+      isExampleProfile: true,
       craft: "Alebrijes en copal",
       specialty: "Figuras policromas talladas a mano",
       story:
@@ -42,6 +59,7 @@ window.TINA_CATALOG = {
       stateId: "chp",
       stateName: "Chiapas",
       community: "San Andrés Larráinzar (comunidad ficticia de ejemplo)",
+      isExampleProfile: true,
       craft: "Brocado maya",
       specialty: "Huipiles y fajas con telar de cintura",
       story:
@@ -55,6 +73,7 @@ window.TINA_CATALOG = {
       stateId: "gro",
       stateName: "Guerrero",
       community: "Taxco el Viejo (comunidad ficticia de ejemplo)",
+      isExampleProfile: true,
       craft: "Platería",
       specialty: "Joyería martillada y repujada",
       story:
@@ -68,6 +87,7 @@ window.TINA_CATALOG = {
       stateId: "mic",
       stateName: "Michoacán",
       community: "Uruapan (comunidad ficticia de ejemplo)",
+      isExampleProfile: true,
       craft: "Laca de Maque",
       specialty: "Bateas y cajas con laca vegetal",
       story:
@@ -76,29 +96,31 @@ window.TINA_CATALOG = {
       featured: false
     },
     {
-      id: "carmen-talavera",
-      name: "Carmen de la Rosa",
+      id: "elena-sierra",
+      name: "Elena Montes R.",
       stateId: "pue",
       stateName: "Puebla",
-      community: "Centro histórico de Puebla (taller ficticio)",
-      craft: "Talavera",
-      specialty: "Cerámica esmaltada de alta temperatura",
+      community: "Sierra Nororiental de Puebla (perfil de ejemplo)",
+      isExampleProfile: true,
+      craft: "Brocado y telar de cintura",
+      specialty: "Geometrías de la sierra en lana y algodón",
       story:
-        "Carmen dirige un taller donde cada pieza pasa por moldeado, bizcocho, esmaltado y cocción a más de mil grados. Los diseños azules cobalto son su firma.",
-      imageSeed: "carmen-puebla",
+        "Perfil ficticio de demostración. Representa a una tejedora de la Sierra Nororiental de Puebla con quien la casa podría colaborar en piezas de autoría compartida.",
+      imageSeed: "elena-sierra-pue",
       featured: true
     },
     {
-      id: "hector-tatewari",
-      name: "Héctor Tatewari",
-      stateId: "nay",
-      stateName: "Nayarit",
-      community: "Sierra Wixárika (comunidad ficticia de ejemplo)",
-      craft: "Arte sacro wixárika",
-      specialty: "Cuadros con chaquira y cera",
+      id: "irene-tenango",
+      name: "Irene Santos V.",
+      stateId: "hid",
+      stateName: "Hidalgo",
+      community: "Tenango de Doria (perfil de ejemplo)",
+      isExampleProfile: true,
+      craft: "Bordado tenangueño",
+      specialty: "Textiles narrativos de flora y fauna",
       story:
-        "Héctor elabora tablas ceremoniales con chaquiras de colores, siguiendo la cosmovisión wixárika. Tina Valente documenta cada pieza con su bendición comunitaria y contexto cultural.",
-      imageSeed: "hector-nayarit",
+        "Perfil ficticio de demostración. Ilustra cómo Tina Valente presenta el trabajo de maestras de Hidalgo con crédito visible al oficio y a la comunidad.",
+      imageSeed: "irene-tenango-hid",
       featured: false
     },
     {
@@ -107,6 +129,7 @@ window.TINA_CATALOG = {
       stateId: "jal",
       stateName: "Jalisco",
       community: "Tonalá (comunidad ficticia de ejemplo)",
+      isExampleProfile: true,
       craft: "Barro bruñido",
       specialty: "Jarrones y platos de barro canelo",
       story:
@@ -117,7 +140,91 @@ window.TINA_CATALOG = {
   ],
   pieces: [
     {
+      id: "tina-vestido-rebozo-alba",
+      collection: "tina",
+      title: "Vestido «Alba de rebozo»",
+      priceMXN: 14800,
+      dimensions: "Talla M (única en demo)",
+      materials: "Lana y algodón, tinte con grana cochinilla",
+      story:
+        "Vestido prêt-à-porter de la colección Tina Valente: silueta contemporánea que integra un rebozo re-tejido. Pieza de ejemplo para la demostración digital.",
+      imageSeed: "tina-vestido-alba",
+      authorshipType: "Diseño Tina Valente",
+      artisanName: "Tina Valente",
+      community: "Taller de diseño, Sierra Nororiental de Puebla",
+      stateName: "Puebla",
+      technique: "Telar de pedal, bordado y confección",
+      workHoursApprox: "Aprox. 120 h"
+    },
+    {
+      id: "tina-saco-grana",
+      collection: "tina",
+      title: "Saco prêt-à-porter «Grana»",
+      priceMXN: 11200,
+      dimensions: "Talla única",
+      materials: "Lana cardada, cochinilla y algodón crudo",
+      story: "Saco estructurado con densidad de brocado. Ejemplo de pieza de diseño propio en la vitrina digital.",
+      imageSeed: "tina-saco-grana",
+      authorshipType: "Diseño Tina Valente",
+      artisanName: "Tina Valente",
+      community: "Taller de diseño, Puebla",
+      stateName: "Puebla",
+      technique: "Tejido en telar de pedal y tintes naturales",
+      workHoursApprox: "Aprox. 90 h"
+    },
+    {
+      id: "tina-vestido-plumario",
+      collection: "tina",
+      title: "Vestido «Plumario»",
+      priceMXN: 18900,
+      dimensions: "Talla S",
+      materials: "Algodón, aplicaciones de plumario (arte de ejemplo)",
+      story:
+        "Pieza que une arte plumario con corte contemporáneo. Contenido ficticio para mostrar la línea prêt-à-porter de la casa.",
+      imageSeed: "tina-vestido-plumario",
+      authorshipType: "Diseño Tina Valente",
+      artisanName: "Tina Valente",
+      community: "Taller de diseño, Puebla",
+      stateName: "Puebla",
+      technique: "Arte plumario y bordado",
+      workHoursApprox: "Aprox. 150 h"
+    },
+    {
+      id: "tina-rebozo-corto-pedal",
+      collection: "tina",
+      title: "Rebozo corto «Pedal»",
+      priceMXN: 7600,
+      dimensions: "120 × 70 cm",
+      materials: "Algodón e índigo",
+      story: "Rebozo corto para uso urbano. Ejemplo de pieza única de colección propia.",
+      imageSeed: "tina-rebozo-pedal",
+      authorshipType: "Diseño Tina Valente",
+      artisanName: "Tina Valente",
+      community: "Taller de diseño, Puebla",
+      stateName: "Puebla",
+      technique: "Telar de pedal",
+      workHoursApprox: "Aprox. 65 h"
+    },
+    {
+      id: "tina-chaleco-brocado",
+      collection: "tina",
+      title: "Chaleco «Brocado sierra»",
+      priceMXN: 9800,
+      dimensions: "Talla M",
+      materials: "Lana y algodón brocado",
+      story:
+        "Chaleco de edición única en demo. Diseño de Tina Valente con tejido en colaboración con maestra de ejemplo de la Sierra Nororiental.",
+      imageSeed: "tina-chaleco-brocado",
+      authorshipType: "Colaboración",
+      artisanName: "Elena Montes R. (perfil de ejemplo)",
+      community: "Sierra Nororiental de Puebla (ficticio)",
+      stateName: "Puebla",
+      technique: "Brocado en telar de cintura y corte Tina Valente",
+      workHoursApprox: "Aprox. 80 h"
+    },
+    {
       id: "pieza-dawn-rug",
+      collection: "artesanos",
       producerId: "maria-chen",
       title: "Tapete «Amanecer en el valle»",
       priceMXN: 18500,
@@ -268,64 +375,88 @@ window.TINA_CATALOG = {
       imageSeed: "bandeja-laca"
     },
     {
-      id: "pieza-platón-talavera",
-      producerId: "carmen-talavera",
-      title: "Platón azul cobalto",
-      priceMXN: 2800,
-      dimensions: "32 cm",
-      materials: "Talavera certificada",
-      story: "Borde perimetral con motivos vegetales.",
-      imageSeed: "platon-talavera"
+      id: "pieza-fajon-sierra",
+      collection: "artesanos",
+      producerId: "elena-sierra",
+      title: "Fajón de brocado «Sierra»",
+      priceMXN: 4200,
+      dimensions: "240 × 14 cm",
+      materials: "Lana y algodón",
+      story: "Pieza de ejemplo atribuida a perfil ficticio de la Sierra Nororiental.",
+      imageSeed: "fajon-sierra",
+      authorshipType: "Obra de maestra/o artesano",
+      technique: "Telar de cintura",
+      workHoursApprox: "Aprox. 40 h"
     },
     {
-      id: "pieza-jarrón-puebla",
-      producerId: "carmen-talavera",
-      title: "Jarrón «Fuente del centro»",
-      priceMXN: 8900,
-      dimensions: "40 cm alto",
-      materials: "Cerámica esmaltada",
-      story: "Doble cocción. Diseño exclusivo del taller.",
-      imageSeed: "jarron-puebla"
+      id: "pieza-rebozo-sierra",
+      collection: "artesanos",
+      producerId: "elena-sierra",
+      title: "Rebozo «Geometría de niebla»",
+      priceMXN: 12500,
+      dimensions: "200 × 75 cm",
+      materials: "Lana, cochinilla",
+      story: "Ejemplo de rebozo tejido con crédito visible a la artesana ficticia.",
+      imageSeed: "rebozo-sierra",
+      authorshipType: "Obra de maestra/o artesano",
+      technique: "Telar de pedal y tinte natural",
+      workHoursApprox: "Aprox. 95 h"
     },
     {
-      id: "pieza-tazas-pareja",
-      producerId: "carmen-talavera",
-      title: "Pareja de tazas vuelo",
-      priceMXN: 1900,
-      dimensions: "250 ml c/u",
-      materials: "Talavera",
-      story: "Pájaros en vuelo en esmalte azul.",
-      imageSeed: "tazas-pareja"
+      id: "pieza-camino-sierra",
+      collection: "artesanos",
+      producerId: "elena-sierra",
+      title: "Camino de mesa «Cardo»",
+      priceMXN: 3800,
+      dimensions: "40 × 180 cm",
+      materials: "Algodón",
+      story: "Pieza única de demostración.",
+      imageSeed: "camino-sierra",
+      authorshipType: "Obra de maestra/o artesano",
+      technique: "Telar de cintura",
+      workHoursApprox: "Aprox. 35 h"
     },
     {
-      id: "pieza-cuadro-chaquira",
-      producerId: "hector-tatewari",
-      title: "Cuadro chaquira «Venado sol»",
-      priceMXN: 24000,
-      dimensions: "60 × 60 cm",
-      materials: "Chaquira, cera, madera",
-      story: "Representación del venado solar. Requiere cuidados de luz indirecta.",
-      imageSeed: "cuadro-venado"
-    },
-    {
-      id: "pieza-mascara-chaquira",
-      producerId: "hector-tatewari",
-      title: "Máscara ceremonial (réplica decorativa)",
+      id: "pieza-tenango-ave",
+      collection: "artesanos",
+      producerId: "irene-tenango",
+      title: "Bordado «Aves de niebla»",
       priceMXN: 11200,
-      dimensions: "25 × 18 cm",
-      materials: "Chaquira sobre papel maché",
-      story: "Pieza decorativa, no ceremonial. Contexto cultural incluido.",
-      imageSeed: "mascara-chaquira"
+      dimensions: "90 × 90 cm",
+      materials: "Manta de algodón bordada",
+      story: "Textil narrativo de ejemplo, Hidalgo.",
+      imageSeed: "tenango-ave",
+      authorshipType: "Obra de maestra/o artesano",
+      technique: "Bordado tenangueño",
+      workHoursApprox: "Aprox. 70 h"
     },
     {
-      id: "pieza-bolsa-chaquira",
-      producerId: "hector-tatewari",
-      title: "Bolsa ritual decorativa",
-      priceMXN: 6800,
-      dimensions: "20 × 15 cm",
-      materials: "Chaquira y cera",
-      story: "Diseño de ojos de dios estilizado para exhibición en casa.",
-      imageSeed: "bolsa-chaquira"
+      id: "pieza-tenango-flores",
+      collection: "artesanos",
+      producerId: "irene-tenango",
+      title: "Paño bordado «Flores de milpa»",
+      priceMXN: 8600,
+      dimensions: "75 × 75 cm",
+      materials: "Algodón y hilos de color",
+      story: "Pieza ficticia con motivos de campo hidalguense.",
+      imageSeed: "tenango-flores",
+      authorshipType: "Obra de maestra/o artesano",
+      technique: "Bordado tenangueño",
+      workHoursApprox: "Aprox. 55 h"
+    },
+    {
+      id: "pieza-tenango-faja",
+      collection: "artesanos",
+      producerId: "irene-tenango",
+      title: "Faja bordada «Camino»",
+      priceMXN: 3200,
+      dimensions: "250 × 12 cm",
+      materials: "Algodón bordado",
+      story: "Accesorio textil de demostración.",
+      imageSeed: "tenango-faja",
+      authorshipType: "Obra de maestra/o artesano",
+      technique: "Bordado a mano",
+      workHoursApprox: "Aprox. 30 h"
     },
     {
       id: "pieza-jarrón-brunido",
@@ -416,27 +547,27 @@ window.TINA_CATALOG = {
       description: "Aplica una capa de maque y participa del pulido final."
     },
     {
-      id: "exp-talavera",
-      producerId: "carmen-talavera",
-      title: "Horneo de talavera",
-      dates: ["13 dic 2026", "27 dic 2026"],
-      capacity: 10,
-      duration: "4 horas",
-      priceMXN: 1800,
-      location: "Puebla, Puebla",
-      description: "Pintado de azulejo y visita a la cámara de cocción."
+      id: "exp-sierra-brocado",
+      producerId: "elena-sierra",
+      title: "Mañana de brocado en la sierra",
+      dates: ["7 dic 2026", "14 dic 2026"],
+      capacity: 6,
+      duration: "5 horas",
+      priceMXN: 2100,
+      location: "Sierra Nororiental de Puebla (ruta de ejemplo)",
+      description:
+        "Demostración ficticia: visita a taller de tejido con telar de cintura y explicación de tintes naturales."
     },
     {
-      id: "exp-wixarika",
-      producerId: "hector-tatewari",
-      title: "Encuentro cultural wixárika",
-      dates: ["Bajo cita — contacto previo"],
-      capacity: 4,
-      duration: "Día completo",
-      priceMXN: 4500,
-      location: "Sierra Nayarita",
-      description:
-        "Visita guiada con contexto cultural, sin grabaciones. Respeto estricto a protocolos comunitarios."
+      id: "exp-tenango",
+      producerId: "irene-tenango",
+      title: "Bordado y narrativa en Tenango",
+      dates: ["22 nov 2026", "6 dic 2026"],
+      capacity: 5,
+      duration: "4 horas",
+      priceMXN: 1850,
+      location: "Tenango de Doria, Hidalgo (ejemplo)",
+      description: "Sesión de demostración con perfil ficticio de maestra bordadora."
     },
     {
       id: "exp-tonala",
@@ -451,11 +582,12 @@ window.TINA_CATALOG = {
     }
   ],
   about: {
-    title: "Nuestra historia",
+    title: "Casa de Innovación y Diseño Artesano",
+    galleryPhrase: "Un lugar en donde resurge el espíritu artístico de México",
     paragraphs: [
-      "Tina Valente nació de una pregunta sencilla: ¿cómo acercar al mundo las manos que crean la artesanía mexicana sin convertirlas en un catálogo anónimo?",
-      "Somos una casa editorial y comercio consciente. Cada pieza en esta demo es única y está ligada a una persona, una comunidad y un oficio. No competimos por volumen: competimos por cuidado, trazabilidad y dignidad.",
-      "Esta propuesta fue elaborada por Guru Software Studio para mostrar cómo un sitio estático, elegante y centrado en productores puede escalar cuando Tina esté lista para conectar su catálogo real."
+      "Tina Valente es artesana originaria de la Sierra Nororiental de Puebla. Conoce el oficio desde niña: tejidos y brocados en lana y algodón, arte plumario, tintes naturales como la grana cochinilla, bordado, telar de cintura y telar de pedal. Su casa une técnicas ancestrales con tendencias actuales en colecciones prêt-à-porter — vestidos y sacos de rebozo — y en la curaduría de piezas de maestras y maestros de todo México.",
+      "En este sitio de demostración, Tina aparece en su doble papel: diseñadora de su colección propia y curadora que pone al frente el nombre, la comunidad y el oficio de cada artesana y artesano aliado. Como ha expresado en su propio relato público, busca dar «crédito a los saberes comunitarios y de nuestras maestras».",
+      "Los perfiles de maestras y maestros incluidos aquí son ficticios y están claramente marcados como ejemplos de vitrina. El catálogo real se cargará después en data/catalog.js."
     ]
   }
 };
